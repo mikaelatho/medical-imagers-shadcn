@@ -49,6 +49,18 @@
 note: using oklch, a new way to have css color codes, converting from hex code
 */
 :root {
+  /*custom colors*/
+  --bluedark900:oklch(0.3602 0.229 264.); /*800*/
+  --bluedark800:oklch(0.4221 0.236 263.82); 
+  --bluedark700:oklch(0.4221 0.236 263.82);
+  --bluedark600: oklch(0.4845 0.247486 263.131);
+  --blue500: oklch(0.5094 0.2497 262.71);
+  --blue400: oklch(0.575 0.231 262.57);
+  --bluelight300: oklch(0.6583 0.1808 268.16);
+  --bluelight200: oklch(0.7514 0.1269 269.32);
+  --bluelight100: oklch(0.8564 0.0702 268.01);
+  --light50:oklch(0.9477 0.0265 246.34);
+  /*end custom*/
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -56,7 +68,7 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: var(--bluedark900); /*oklch(0.208 0.042 265.755);*/
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -90,7 +102,7 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
+  --primary: var(--bluedark900);/*oklch(0.929 0.013 255.508);*/
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
@@ -115,18 +127,6 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-}
-.custom {
-  --bluedark900:oklch(0.3602 0.229 264.); /*800*/
-  --bluedark800:oklch(0.4221 0.236 263.82); 
-  --bluedark700:oklch(0.4221 0.236 263.82);
-  --bluedark600: oklch(0.4845 0.247486 263.131);
-  --blue500: oklch(0.5094 0.2497 262.71);
-  --blue400: oklch(0.575 0.231 262.57);
-  --bluelight300: oklch(0.6583 0.1808 268.16);
-  --bluelight200: oklch(0.7514 0.1269 269.32);
-  --bluelight100: oklch(0.8564 0.0702 268.01);
-  --ligh50:oklch(0.9477 0.0265 246.34);
 }
 
 @layer base {
