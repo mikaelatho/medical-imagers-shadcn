@@ -2,6 +2,18 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/*
+--bluedark900:oklch(0.3602 0.229 264.);
+--bluedark800:oklch(0.4221 0.236 263.82); 
+--bluedark700:oklch(0.4221 0.236 263.82);
+--bluedark600: oklch(0.4845 0.247486 263.131);
+--blue500: oklch(0.5094 0.2497 262.71);
+--blue400: oklch(0.575 0.231 262.57);
+--bluelight300: oklch(0.6583 0.1808 268.16);
+--bluelight200: oklch(0.7514 0.1269 269.32);
+--bluelight100: oklch(0.8564 0.0702 268.01);
+--light50:oklch(0.9477 0.0265 246.34);
+end custom */
 
 @theme inline {
   --color-background: var(--background);
@@ -49,32 +61,20 @@
 note: using oklch, a new way to have css color codes, converting from hex code
 */
 :root {
-  /*custom colors*/
-  --bluedark900:oklch(0.3602 0.229 264.); /*800*/
-  --bluedark800:oklch(0.4221 0.236 263.82); 
-  --bluedark700:oklch(0.4221 0.236 263.82);
-  --bluedark600: oklch(0.4845 0.247486 263.131);
-  --blue500: oklch(0.5094 0.2497 262.71);
-  --blue400: oklch(0.575 0.231 262.57);
-  --bluelight300: oklch(0.6583 0.1808 268.16);
-  --bluelight200: oklch(0.7514 0.1269 269.32);
-  --bluelight100: oklch(0.8564 0.0702 268.01);
-  --light50:oklch(0.9477 0.0265 246.34);
-  /*end custom*/
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: var(--bluedark900-value);
+  --foreground: oklch(0.3602 0.229 264);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: var(--bluedark900-value); /*oklch(0.208 0.042 265.755);*/
+  --primary: oklch(0.3602 0.229 264); 
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.9477 0.0265 246.34);
+  --secondary-foreground: oklch(0.3602 0.229 264);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
+  --accent: oklch(0.9477 0.0265 246.34);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);
@@ -90,19 +90,19 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --sidebar-primary: oklch(0.208 0.042 265.755);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-accent-foreground: oklch(0.4221 0.236 263.82);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
-  --foreground: var(--bluedark900-value);
+  --foreground: oklch(0.985 0.002 247.839);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: var(--bluedark900-value);/*oklch(0.929 0.013 255.508);*/
+  --primary: oklch(0.4845 0.247486 263.131);/*oklch(0.929 0.013 255.508);*/
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
