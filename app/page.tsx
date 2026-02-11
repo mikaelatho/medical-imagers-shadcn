@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 export default function Home() {
   return (
     <main>
-      
+
           <div className="flex flex-wrap items-center gap-2 md:flex-row">
             <Button>Default</Button>
             <Button variant="outline">Outline</Button>
@@ -18,7 +18,6 @@ export default function Home() {
             <Button variant="outline" size="icon">
                   <CircleFadingArrowUpIcon />
             </Button>
-            <Button>default</Button>
           </div>
     </main>
 
