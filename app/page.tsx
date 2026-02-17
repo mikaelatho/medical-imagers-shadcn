@@ -1,10 +1,8 @@
 /* MAIN HOME PAGE */
 
-import Image from "next/image";
-import Link from "next/link";
 import { forwardRef } from "react";
-import { CircleFadingArrowUpIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -14,6 +12,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Menu } from "lucide-react"; // Import the icon
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 const ListItem = forwardRef<
   HTMLAnchorElement,
@@ -46,76 +52,85 @@ export default function Home() {
   return (
     <main>
       {/* NAV BAR */}
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="w-96">
-                <ListItem href="/learn" title="Learn stuff">
-                  A description of the learn section
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <div className="flex min-h-screen w-full items-center justify-center">
-        <Button>Default</Button>
-       
+      <nav className="flex w-full items-center justify-between px-6 md:px-20 py-4 border-b">
+        {/* LEFT: Logo/Title */}
+          <h1 className="text-lg font-bold">Brain MRI</h1>
+        {/* RIGHT: Desktop Menu (Hidden on mobile) */}
+        <div className="hidden md:flex items-center gap-10">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-96">
+                    <ListItem href="/learn" title="Learn stuff">
+                      A description of the learn section
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Games</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-96">
+                    <ListItem href="/learn" title="Header title">
+                      A description of the this section
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-96">
+                    <ListItem href="/learn" title="Header title">
+                      A description of the this section
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-96">
+                    <ListItem href="/learn" title="Header title">
+                      A description of the this section
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+        {/* RIGHT: Mobile Hamburger (Hidden on desktop) */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="text-left">Navigation</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-4 mt-8">
+                {/* Mobile Links */}
+                <a href="/learn" className="text-lg font-medium">Learn</a>
+                <a href="/games" className="text-lg font-medium">Games</a>
+                <a href="/explore" className="text-lg font-medium">Explore</a>
+                <a href="/about" className="text-lg font-medium">About</a>
+              </div>
+            </SheetContent>
+          </Sheet>
       </div>
-
+      </nav>
+      {/*main page content (edit in div below)*/}
+      <div className="px-20 flex min-h-screen w-full items-center justify-center">
+        <Button>Default</Button>
+      </div>
       {/*FOOTER*/}
-      <div className="flex flex-col sm:flex-row w-full justify-between items-center bg-blue-900 p-8 pb-20 text-white gap-8">
-        {/* Left Side */}
-        <div className="sm:text-left">
-          <h3 className="scroll-m-20 text-xl font-bold">Brain MRI</h3>
-          <p className="text-sm">A visual learning resource for MRI.</p>
-          <p className="text-sm">© 2026 Team Medical Imagers</p>
-        </div>
-        {/* Right Side */}
-        <div className="flex flex-col sm:flex-row gap-10 text-center text-sm sm:text-left">
-          <div>
-            <ul>
-              <li className="hover:underline cursor-pointer font-bold">Home</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li className="hover:underline cursor-pointer font-bold">Learn</li>
-              <li className="hover:underline cursor-pointer">Interactive Viewer</li>
-              <li className="hover:underline cursor-pointer">Brain Anatomy</li>
-              <li className="hover:underline cursor-pointer">Glossary</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li className="hover:underline cursor-pointer font-bold">Explore</li>
-              <li className="hover:underline cursor-pointer">Quiz</li>
-              <li className="hover:underline cursor-pointer">Trivia</li>
-              <li className="hover:underline cursor-pointer">Progress</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li className="hover:underline cursor-pointer font-bold">About</li>
-              <li className="hover:underline cursor-pointer">Team</li>
-              <li className="hover:underline cursor-pointer">Objectives</li>
-              <li className="hover:underline cursor-pointer">Sources</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li className="hover:underline cursor-pointer font-bold">About</li>
-              <li className="hover:underline cursor-pointer">How do MRIs work?</li>
-              <li className="hover:underline cursor-pointer">Brain Anatomy</li>
-              <li className="hover:underline cursor-pointer">Glossary</li>
-            </ul>
-          </div>
-        </div>
-      </div> 
-
+      <Footer></Footer>
     </main>
   );
 }
