@@ -2,20 +2,20 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-/*
---bluedark900:oklch(0.3602 0.229 264.);
---bluedark800:oklch(0.4221 0.236 263.82); 
---bluedark700:oklch(0.4221 0.236 263.82);
---bluedark600: oklch(0.4845 0.247486 263.131);
---blue500: oklch(0.5094 0.2497 262.71);
---blue400: oklch(0.575 0.231 262.57);
---bluelight300: oklch(0.6583 0.1808 268.16);
---bluelight200: oklch(0.7514 0.1269 269.32);
---bluelight100: oklch(0.8564 0.0702 268.01);
---light50:oklch(0.9477 0.0265 246.34);
-end custom */
 
 @theme inline {
+  /*CUSTOM*/
+  --color-blue-900: oklch(0.3602 0.229 264);
+  --color-blue-800: oklch(0.4221 0.236 263.82); 
+  --color-blue-700: oklch(0.4221 0.236 263.82);
+  --color-blue-600: oklch(0.4845 0.247486 263.131);
+  --color-blue-500: oklch(0.5094 0.2497 262.71);
+  --color-blue-400: oklch(0.575 0.231 262.57);
+  --color-blue-300: oklch(0.6583 0.1808 268.16);
+  --color-blue-200: oklch(0.7514 0.1269 269.32);
+  --color-blue-100: oklch(0.8564 0.0702 268.01);
+  --color-blue-50:  oklch(0.9477 0.0265 246.34);
+/* end custom */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -56,6 +56,7 @@ end custom */
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  
 }
 /* COLOR VARIABLES 
 note: using oklch, a new way to have css color codes, converting from hex code
@@ -74,7 +75,7 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --secondary-foreground: oklch(0.3602 0.229 264);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.9477 0.0265 246.34);
+  --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.3602 0.229 264);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);
