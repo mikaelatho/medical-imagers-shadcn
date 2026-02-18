@@ -66,6 +66,12 @@ export default function Home() {
                     <ListItem href="/learn" title="Learn stuff">
                       A description of the learn section
                     </ListItem>
+                    <ListItem href="/learn" title="Learn stuff">
+                      A description of the learn section
+                    </ListItem>
+                    <ListItem href="/learn" title="Learn stuff">
+                      A description of the learn section
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
