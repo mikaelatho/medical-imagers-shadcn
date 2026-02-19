@@ -59,7 +59,7 @@ export function Nav() {
         <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
+                  <NavigationMenuTrigger><Link href="/learn">Learn</Link></NavigationMenuTrigger>
                   <NavigationMenuContent>
                   <ul className="w-96">
                       <ListItem href="/learn" title="Learn stuff">
@@ -75,7 +75,7 @@ export function Nav() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger>Games</NavigationMenuTrigger>
+                  <NavigationMenuTrigger><Link href="/games">Games</Link></NavigationMenuTrigger>
                   <NavigationMenuContent>
                   <ul className="w-96">
                       <ListItem href="/games" title="Header title">
@@ -85,7 +85,7 @@ export function Nav() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
+                  <NavigationMenuTrigger><Link href="/explore">Explore</Link></NavigationMenuTrigger>
                   <NavigationMenuContent>
                   <ul className="w-96">
                       <ListItem href="/explore" title="Header title">
@@ -95,7 +95,7 @@ export function Nav() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                  <NavigationMenuTrigger><Link href="/about">About</Link></NavigationMenuTrigger>
                   <NavigationMenuContent>
                   <ul className="w-96">
                       <ListItem href="/about" title="Header title">
@@ -121,10 +121,10 @@ export function Nav() {
             </SheetHeader>
             <div className="flex flex-col gap-4 mt-8 mx-6">
                 {/* Mobile Links */}
-                <a href="/learn" className="text-lg font-medium">Learn</a>
-                <a href="/games" className="text-lg font-medium">Games</a>
-                <a href="/explore" className="text-lg font-medium">Explore</a>
-                <a href="/about" className="text-lg font-medium">About</a>
+                <Link href="/learn" className="text-lg font-medium">Learn</Link>
+                <Link href="/games" className="text-lg font-medium">Games</Link>
+                <Link href="/explore" className="text-lg font-medium">Explore</Link>
+                <Link href="/about" className="text-lg font-medium">About</Link>
             </div>
             </SheetContent>
         </Sheet>
