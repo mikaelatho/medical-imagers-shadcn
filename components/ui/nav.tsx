@@ -1,4 +1,5 @@
 // components/ui/nav.tsx
+"use client"
 import * as React from "react"
 import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
