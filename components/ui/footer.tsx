@@ -8,7 +8,7 @@ export function Footer() {
      p-8 pb-20 text-white gap-8 sm:px-25">
     {/* Left Side */}
     <div className="items-center text-center sm:text-left">
-      <h3 className="scroll-m-20 text-xl font-bold">Brain MRI</h3>
+      <h3 className="scroll-m-20 text-xl font-bold">LearnMRI</h3>
       <p className="text-sm">A visual learning resource for MRI.</p>
       <p className="text-sm mt-4">© 2026 Team Medical Imagers</p>
     </div>
