@@ -10,7 +10,7 @@ export function Footer() {
     <div className="items-center text-center sm:text-left">
       <h3 className="scroll-m-20 text-xl font-bold">LearnMRI</h3>
       <p className="text-sm">A visual learning resource for MRI.</p>
-      <p className="text-sm mt-4">© 2026 Team Medical Imagers</p>
+      <p className="text-sm mt-10">© 2026 Team Medical Imagers</p>
     </div>
     {/* Right Side */}
     <div className="flex flex-col sm:flex-row gap-10 text-center text-sm sm:text-left">

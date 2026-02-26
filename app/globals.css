@@ -4,9 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-source-serif-4: var(--font-source-serif-4), serif;
+  --font-inter: var(--font-inter), sans-serif;
   /*CUSTOM*/
-  --color-blue-900: oklch(0.3602 0.229 264);
-  --color-blue-800: oklch(0.4221 0.236 263.82); 
+  --color-blue-800: oklch(0.3602 0.229 264); 
   --color-blue-700: oklch(0.4221 0.236 263.82);
   --color-blue-600: oklch(0.4845 0.247486 263.131);
   --color-blue-500: oklch(0.5094 0.2497 262.71);
@@ -69,14 +70,14 @@ note: using oklch, a new way to have css color codes, converting from hex code
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.3602 0.229 264); 
+  --primary: oklch(0.4845 0.247486 263.131); 
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.9477 0.0265 246.34);
   --secondary-foreground: oklch(0.3602 0.229 264);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.3602 0.229 264);
+  --accent-foreground: oklch(0.4221 0.236 263.82);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);

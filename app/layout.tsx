@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Source_Serif_4, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/ui/nav";
 import { Footer } from "@/components/ui/footer";
+
+const inter = Inter({
+  variable:"--font-inter",
+  subsets: ["latin"]
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +18,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const sourceSerif4 = Source_Serif_4({
+  variable: "--font-source-serif-4",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif4.variable} ${inter.variable} antialiased`}>
         <div className="flex flex-col min-h-screen">
           <header className="sticky top-0 z-50 w-full backdrop-blur">
             <Nav></Nav>
