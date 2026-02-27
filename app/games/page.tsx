@@ -8,7 +8,7 @@ export default function Games() {
   return (
     <main>
       {/*main page content (edit in div below)*/}
-      <div className="mx-6 sm:mx-25 my-20 flex-auto min-h-screen">
+      <div className="items-center justify-center mx-auto max-w-7xl flex-auto min-h-screen">
         <Button variant="secondary">Games</Button>
         <br></br>
         <div>
