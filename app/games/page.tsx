@@ -1,9 +1,9 @@
 /* GAMES PAGE */
-
+// below is where you import components and props/states to use
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/ui/footer";
-import { Nav } from "@/components/ui/nav";
+import Link from "next/link";
 
+// below is the page contents
 export default function Games() {
   return (
     <main>

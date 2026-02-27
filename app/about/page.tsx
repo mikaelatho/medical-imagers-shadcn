@@ -1,10 +1,10 @@
 /* ABOUT PAGE */
 
+// below is where you import components and props/states to use
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/ui/footer";
-import { Nav } from "@/components/ui/nav";
+import Link from "next/link";
 
-// below is start of the home page
+// below is the page contents
 export default function About() {
   return (
     <main>
