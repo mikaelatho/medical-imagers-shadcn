@@ -14,7 +14,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // below is start of the home page
 export default function Home() {
@@ -27,7 +32,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">A visual learning resource for MRI</h1>
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-5">
               <div>
-                <p className="text-slate-600 text-lg font-bold max-w-xs sm:max-w-md">Learn about MRI technique through our interactive data.</p>
+                <p className="font-inter text-slate-600 text-lg font-bold max-w-xs sm:max-w-md">Learn about MRI technique through our interactive data.</p>
               </div>
               <div>
                 <Button variant="default" asChild><Link href="/explore">Explore Data</Link></Button>
@@ -121,17 +126,93 @@ export default function Home() {
       {/* information section */}
       <div className="px-6 sm:px-20 py-20 items-center bg-blue-50">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-40 text-left">
-          <div className="">
+          <div className="place-items-center self-center">
             <h2 className="text-3xl md:text-4xl font-bold font-source-serif-4 my-5">
               Our information comes from all <span className="text-blue-600">trusted sources</span>
             </h2>
           </div>
-          <div className="">
-            <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium my-5 text-blue-600">100% peer reviewed papers</h2>
+          <div className="items-center grid grid-cols-[2rem_1fr] sm:grid-cols-[2.5rem_1fr] gap-x-3 gap-y-5">
+            <div className="flex justify-center">
+              <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={32} />
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">100% peer reviewed papers</h2>
+              <p className="font-inter text-slate-600 text-sm my-2">Our content is based on information from peer-reviewed studies, with source to the original paper.</p>
+            </div>
+            <div className="flex justify-center">
+              <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={32} />
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Up to date glossary</h2>
+              <p className="font-inter text-slate-600 text-sm my-2">Our glossary is updated regularly to make sure definitions stay clear, accurate, and easy to understand.</p>
+            </div>
+            <div className="flex justify-center">
+              <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={32} />
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Advised by professors [...]</h2>
+              <p className="font-inter text-slate-600 text-sm my-2">This platform is created with guidance from an experienced researcher,.... to help ensure quality and accuracy.</p>
+            </div>
           </div>
         </div>
       </div>
-
+      <div className="items-center justify-center mx-auto max-w-7xl flex-auto">
+        <div className="px-6 sm:px-20 py-20 grid grid-row">
+          <h3 className="font-inter text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Frequently asked questions</h3>
+          <Accordion type="single" collapsible defaultValue="shipping" className="max-w-6xl">
+            <AccordionItem value="definition">
+              <AccordionTrigger>What is LearnMRI?</AccordionTrigger>
+              <AccordionContent>
+                LearnMRI is a visual learning platform designed to help students and beginners understand brain MRI scans through interactive visuals,
+                clear explanations, and practice activities. It breaks down complex medical imaging concepts into approachable, visual content.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="usecase">
+              <AccordionTrigger>Who can benefit from using LearnMRI?</AccordionTrigger>
+              <AccordionContent>
+                BrainMRI is made for:
+                <ul className="list-disc pl-5 mt-2">
+                  <li className="marker:text-blue-600">Students learning neuroscience, psychology, or medical imaging
+                  </li>
+                  <li className="marker:text-blue-600">
+                    Beginners without a medical background that are curious about how MRI scans work
+                  </li>
+                  <li className="marker:text-blue-600">
+                    Anyone who wants a visual, non-intimidating way to learn brain anatomy
+                    No prior medical or imaging knowledge is required.
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="actions">
+              <AccordionTrigger>What can I do on LearnMRI?</AccordionTrigger>
+              <AccordionContent>
+               You can:
+                <ul className="list-disc pl-5 mt-2">
+                  <li className="marker:text-blue-600">
+                    Explore interactive brain MRI visualizations
+                  </li>
+                  <li className="marker:text-blue-600">
+                    Learn key MRI and brain anatomy terms
+                  </li>
+                  <li className="marker:text-blue-600">
+                    Test your understanding through games and quizzes
+                  </li>
+                  <li className="marker:text-blue-600">
+                    Review concepts at your own pace and return anytime
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="sources">
+              <AccordionTrigger> Where does the information come from?</AccordionTrigger>
+              <AccordionContent>
+                All educational content is based on peer-reviewed research and trusted medical sources. Definitions and explanations are reviewed and updated regularly, with guidance from academic and research professionals at Purdue University.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
     </main>
   );
 }

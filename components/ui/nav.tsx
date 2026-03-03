@@ -52,84 +52,84 @@ ListItem.displayName = "ListItem";
 
 export function Nav() {
   return (
-    <nav className="flex w-full items-center justify-between px-6 md:px-20 py-4 border-b">
-        {/* LEFT: Logo/Title */}
-        <h1 className="text-lg font-bold [text-shadow:0_2px_4px_#fff]"><a href="/">LearnMRI</a></h1>
-        {/* RIGHT: Desktop Menu (Hidden on mobile) */}
-        <div className="hidden md:flex items-center gap-10 relative">
+    <nav className="flex w-full items-center justify-between px-6 md:px-20 py-4 border-b font-inter">
+      {/* LEFT: Logo/Title */}
+      <h1 className="text-lg font-bold [text-shadow:0_1px_6px_#ffff]"><a href="/">LearnMRI</a></h1>
+      {/* RIGHT: Desktop Menu (Hidden on mobile) */}
+      <div className="hidden md:flex items-center gap-10 relative">
         <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                  <NavigationMenuTrigger><Link href="/learn">Learn</Link></NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                  <ul className="w-96">
-                      <ListItem href="/learn" title="Learn stuff">
-                      A description of the learn section
-                      </ListItem>
-                      <ListItem href="/learn" title="Learn stuff">
-                      A description of the learn section
-                      </ListItem>
-                      <ListItem href="/learn" title="Learn stuff">
-                      A description of the learn section
-                      </ListItem>
-                  </ul>
-                  </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                  <NavigationMenuTrigger><Link href="/games">Games</Link></NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                  <ul className="w-96">
-                      <ListItem href="/games" title="Header title">
-                      A description of the this section
-                      </ListItem>
-                  </ul>
-                  </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                  <NavigationMenuTrigger><Link href="/explore">Explore</Link></NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                  <ul className="w-96">
-                      <ListItem href="/explore" title="Header title">
-                      A description of the this section
-                      </ListItem>
-                  </ul>
-                  </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                  <NavigationMenuTrigger><Link href="/about">About</Link></NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                  <ul className="w-96">
-                      <ListItem href="/about" title="Header title">
-                      A description of the this section
-                      </ListItem>
-                  </ul>
-                  </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger><Link href="/learn">Learn</Link></NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-96">
+                  <ListItem href="/learn" title="Learn stuff">
+                    A description of the learn section
+                  </ListItem>
+                  <ListItem href="/learn" title="Learn stuff">
+                    A description of the learn section
+                  </ListItem>
+                  <ListItem href="/learn" title="Learn stuff">
+                    A description of the learn section
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger><Link href="/games">Games</Link></NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-96">
+                  <ListItem href="/games" title="Header title">
+                    A description of the this section
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger><Link href="/explore">Explore</Link></NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-96">
+                  <ListItem href="/explore" title="Header title">
+                    A description of the this section
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger><Link href="/about">About</Link></NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-96">
+                  <ListItem href="/about" title="Header title">
+                    A description of the this section
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
         </NavigationMenu>
-        </div>
-        {/* RIGHT: Mobile Hamburger (Hidden on desktop) */}
-        <div className="md:hidden">
+      </div>
+      {/* RIGHT: Mobile Hamburger (Hidden on desktop) */}
+      <div className="md:hidden">
         <Sheet>
-            <SheetTrigger asChild>
+          <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6"/>
+              <Menu className="h-6 w-6" />
             </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-                <SheetTitle className="text-left">Navigation</SheetTitle>
+              <SheetTitle className="text-left font-inter font-bold">Navigation</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col gap-4 mt-8 mx-6">
-                {/* Mobile Links */}
-                <Link href="/learn" className="text-lg font-medium">Learn</Link>
-                <Link href="/games" className="text-lg font-medium">Games</Link>
-                <Link href="/explore" className="text-lg font-medium">Explore</Link>
-                <Link href="/about" className="text-lg font-medium">About</Link>
+              {/* Mobile Links */}
+              <Link href="/learn" className="text-lg font-inter font-medium hover:text-blue-600">Learn</Link>
+              <Link href="/games" className="text-lg font-inter font-medium hover:text-blue-600">Games</Link>
+              <Link href="/explore" className="text-lg font-inter font-medium hover:text-blue-600">Explore</Link>
+              <Link href="/about" className="text-lg font-inter font-medium hover:text-blue-600">About</Link>
             </div>
-            </SheetContent>
+          </SheetContent>
         </Sheet>
-    </div>
+      </div>
     </nav>
   )
 }
