@@ -54,7 +54,7 @@ export function Nav() {
   return (
     <nav className="flex w-full items-center justify-between px-6 md:px-20 py-4 border-b">
         {/* LEFT: Logo/Title */}
-        <h1 className="text-lg font-bold"><a href="/">LearnMRI</a></h1>
+        <h1 className="text-lg font-bold [text-shadow:0_2px_4px_#fff]"><a href="/">LearnMRI</a></h1>
         {/* RIGHT: Desktop Menu (Hidden on mobile) */}
         <div className="hidden md:flex items-center gap-10 relative">
         <NavigationMenu>

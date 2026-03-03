@@ -27,7 +27,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">A visual learning resource for MRI</h1>
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-5">
               <div>
-                <p className="text-bold max-w-xs sm:max-w-md">Learn about MRI technique through our interactive data.</p>
+                <p className="text-slate-600 text-lg font-bold max-w-xs sm:max-w-md">Learn about MRI technique through our interactive data.</p>
               </div>
               <div>
                 <Button variant="default" asChild><Link href="/explore">Explore Data</Link></Button>
@@ -117,21 +117,21 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* information section */}
-        <div className="px-6 sm:px-20 py-20 items-center bg-blue-50">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-40 text-left">
-            <div className="">
-              <h2 className="text-3xl md:text-4xl font-bold font-source-serif-4 my-5">
-                Our information comes from all <span className="text-blue-600">trusted sources</span>
-              </h2>
-            </div>
-            <div className="">
-              <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium my-5 text-blue-600">100% peer reviewed papers</h2>
-            </div>
+      </div>
+      {/* information section */}
+      <div className="px-6 sm:px-20 py-20 items-center bg-blue-50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-40 text-left">
+          <div className="">
+            <h2 className="text-3xl md:text-4xl font-bold font-source-serif-4 my-5">
+              Our information comes from all <span className="text-blue-600">trusted sources</span>
+            </h2>
+          </div>
+          <div className="">
+            <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium my-5 text-blue-600">100% peer reviewed papers</h2>
           </div>
         </div>
-
       </div>
+
     </main>
   );
 }
