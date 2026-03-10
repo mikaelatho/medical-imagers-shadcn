@@ -38,10 +38,11 @@ const groundMaterial = new THREE.MeshStandardMaterial({
   color: 0x555555,
   side: THREE.DoubleSide
 });
-const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-groundMesh.castShadow = false;
-groundMesh.receiveShadow = true;
-scene.add(groundMesh);
+
+// const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
+// groundMesh.castShadow = false;
+// groundMesh.receiveShadow = true;
+// scene.add(groundMesh);
 
 const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, 0.38, 1);
 spotLight.position.set(0, 25, 0);
@@ -49,21 +50,26 @@ spotLight.castShadow = true;
 spotLight.shadow.bias = -0.0001;
 scene.add(spotLight);
 
-const ambientLight = new THREE.AmbientLight( 0xffffff, .1, 100, 0.38, 1 ); 
-scene.add( ambientLight );
+const leftLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
+leftLight.position.set( 5, 5, 0 );
+leftLight.lookAt( 0, 0, 0 );
+scene.add( leftLight )
+
+const rightLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
+rightLight.position.set( -5, 5, 0 );
+rightLight.lookAt( 0, 0, 0 );
+scene.add( rightLight )
+
+const backLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
+backLight.position.set( 0, 5, -5 );
+backLight.lookAt( 0, 0, 0 );
+scene.add( backLight )
 
 
-// const loader = new GLTFLoader();
-// loader.load('/public/explore-assets/models/standard/standard_scene.gltf', (gltf) => {
-//   console.log('loading model');
-//   const mesh = gltf.scene;
-
-//   mesh.traverse((child) => {
-//     if (child.isMesh) {
-//       child.castShadow = true;
-//       child.receiveShadow = true;
-//     }
-//   });
+const frontLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
+frontLight.position.set( 0, 5, 5 );
+frontLight.lookAt( 0, 0, 0 );
+scene.add( frontLight )
 
 const loader = new GLTFLoader();
 loader.load('/explore-assets/models/standard/standard_scene.gltf', (gltf) => {
