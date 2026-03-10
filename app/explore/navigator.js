@@ -53,8 +53,20 @@ const ambientLight = new THREE.AmbientLight( 0xffffff, .1, 100, 0.38, 1 );
 scene.add( ambientLight );
 
 
-const loader = new GLTFLoader().setPath('models/standard/');
-loader.load('standard_scene.gltf', (gltf) => {
+// const loader = new GLTFLoader();
+// loader.load('/public/explore-assets/models/standard/standard_scene.gltf', (gltf) => {
+//   console.log('loading model');
+//   const mesh = gltf.scene;
+
+//   mesh.traverse((child) => {
+//     if (child.isMesh) {
+//       child.castShadow = true;
+//       child.receiveShadow = true;
+//     }
+//   });
+
+const loader = new GLTFLoader();
+loader.load('/explore-assets/models/standard/standard_scene.gltf', (gltf) => {
   console.log('loading model');
   const mesh = gltf.scene;
 
@@ -64,6 +76,7 @@ loader.load('standard_scene.gltf', (gltf) => {
       child.receiveShadow = true;
     }
   });
+
 
   mesh.position.set(0, 1.05, -1);
   scene.add(mesh);
