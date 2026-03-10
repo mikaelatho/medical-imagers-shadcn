@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Explore() {
   useEffect(() => {
-    import("./local-components/navigator.js")
+    import("./navigator.js")
       .catch((err) => console.error("Failed to load navigator:", err));
   }, []);
 
