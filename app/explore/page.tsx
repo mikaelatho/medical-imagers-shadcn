@@ -88,9 +88,9 @@ export default function Explore() {
 <br/>
 
     <div className="flex gap-4"> 
-        <img src={'local-assets/images/CoronalAnterior_Slice.png'} alt="Coronal Anterior Slice"/>
-        <img src={'local-assets/images/LeftSagittal_Slice.png'} alt="Left Sagittal Slice"/>
-        <img src={'local-assets/images/UpperAxial_Slice.png'} alt="Upper  Axial Slice"/>
+        <img src={'/explore-assets/images/CoronalAnterior_Slice.png'} alt="Coronal Anterior Slice"/>
+        <img src={'/explore-assets/images/LeftSagittal_Slice.png'} alt="Left Sagittal Slice"/>
+        <img src={'/explore-assets/images/UpperAxial_Slice.png'} alt="Upper  Axial Slice"/>
         
     </div>
 

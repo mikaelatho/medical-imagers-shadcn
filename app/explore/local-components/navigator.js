@@ -53,7 +53,7 @@ const ambientLight = new THREE.AmbientLight( 0xffffff, 5, 100, 0.38, 1 ); // sof
 scene.add( ambientLight );
 
 
-const loader = new GLTFLoader().setPath('/explore/local-assets/models/');
+const loader = new GLTFLoader().setPath('../local-assets/models/');
 loader.load('standard.gltf', (gltf) => {
   console.log('MODEL LOADED');
   const mesh = gltf.standard;
