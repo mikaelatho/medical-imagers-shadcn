@@ -158,7 +158,7 @@ export default function Home() {
       </div>
       <div className="items-center justify-center mx-auto max-w-7xl flex-auto">
         <div className="px-6 sm:px-20 py-20 grid grid-row">
-          <h3 className="font-inter text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Frequently asked questions</h3>
+          <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Frequently asked questions</h3>
           <Accordion type="single" collapsible defaultValue="shipping" className="max-w-6xl">
             <AccordionItem value="definition">
               <AccordionTrigger>What is LearnMRI?</AccordionTrigger>
