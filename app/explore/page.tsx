@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Explore() {
+
   useEffect(() => {
     import("./navigator.js")
       .catch((err) => console.error("Failed to load navigator:", err));
   }, []);
-
 
   return (
 
@@ -19,7 +19,7 @@ export default function Explore() {
 {/* ----------HEADER---------- */}
 
       <div id="heading" >
-        <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-black-700 my-5"> Explore Brain MRI Visualizations</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5"> Explore Brain MRI Visualizations</h1>
         <p className="text-wrap break-words sm:text-pretty">
             In the following sections, you can view, interact with, and discover more about MRIs.
         </p>
@@ -31,28 +31,29 @@ export default function Explore() {
           <p></p>
         </div>
 
+{/* ----------FILTER BUTTONS---------- */}
 <div className="flex gap-4">
-
     <Button variant="explore"> Volume Render </Button> 
     <Button variant="explore">Low Contrast </Button>
-
 </div>
+
 </div>
 
   <div id="float-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin: ' 0 auto', width: '25%'}}>
   
+  {/* ----------NAVIGATOR CONTAINER---------- */}
   <div id="float-child" style={{flex: '1', padding: '100%'}}>
     <div>NAVIGATOR.JS HERE  currently at bottom of page</div>
   </div>
   
+  {/* ----------BUTTON CONTAINER---------- */}
   <div id="float-child" style={{flex: '1', border: '2px solid black', borderRadius: '10px', padding: '10%', marginRight: '20px'}}>
     <Button variant="secondary"> Exploration Guide </Button> 
   <div id="right">
         
     <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">Parts of the Brain</h3>
 
-
-              <Button variant="explore">Frontal Lobe </Button> 
+              <Button variant="explore" onClick={() => (window as any).loadButton('/explore-assets/models/standard/standard_scene.gltf')}>Frontal Lobe </Button> 
               <Button variant="explore">Parietal Lobe </Button>
               <Button variant="explore">Occipital Lobe </Button>
               <Button variant="explore">Temporal Lobe </Button>
@@ -71,10 +72,19 @@ export default function Explore() {
   
 </div>
 
+{/* ----------INFO LINKS---------- */}
 <br/>
-<div  style={{background: '#E7E7E7', width: '100%', height: '300px'}}></div>
+<div  style={{background: '#E7E7E7', width: '100%', height: '300px'}}>
 
-{/* WALK THROUGH */}
+<h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left"> Want to Learn More? </h3>
+
+    <div className="flex gap-4"> 
+          
+    </div>
+
+</div>
+
+{/* ----------WALK THROUGH---------- */}
 
 <div className="text-left" style={{padding: '10%'}}>
 
@@ -88,12 +98,12 @@ export default function Explore() {
 <br/>
 
     <div className="flex gap-4"> 
-        <img src={'/explore-assets/images/CoronalAnterior_Slice.png'} alt="Coronal Anterior Slice"/>
-        <img src={'/explore-assets/images/LeftSagittal_Slice.png'} alt="Left Sagittal Slice"/>
-        <img src={'/explore-assets/images/UpperAxial_Slice.png'} alt="Upper  Axial Slice"/>
-        
+        <img src={'/explore-assets/images/CoronalAnterior_Slice.png'} alt="Coronal Anterior Slice" style={{width: '200px', height: '200px'}}/>
+        <img src={'/explore-assets/images/LeftSagittal_Slice.png'} alt="Left Sagittal Slice" style={{width: '200px', height: '200px'}}/>
+        <img src={'/explore-assets/images/UpperAxial_Slice.png'} alt="Upper  Axial Slice" style={{width: '200px', height: '200px'}}/>
     </div>
 
+<br/>
   <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left"> 2. Observe the Overall Structure </h3>
 <p>
         Focus on the big picture first. Notice the shape and volume before jumping into details. 
