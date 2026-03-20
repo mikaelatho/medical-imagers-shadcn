@@ -93,16 +93,16 @@ mesh = gltf.scene;
   mesh.position.set(0, 4.00, -1);
   scene.add(mesh);
 
-  document.getElementById('progress-container').style.display = 'none';
+  // document.getElementById('progress-container').style.display = 'none';
 }, (xhr) => {
-  console.log(`loading ${xhr.loaded / xhr.total * 100}%`);
+  // console.log(`loading ${xhr.loaded / xhr.total * 100}%`);
 }, (error) => {
   console.error(error);
 });
 }
 
 // ------ACCESSORS------
-window.loadButton = loadModel;
+export default loadModel;
 loadModel('/explore-assets/models/standard/standard_scene.gltf');
 
 // ------WINDOW------

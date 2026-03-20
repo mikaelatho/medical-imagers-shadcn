@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import loadModel from "./navigator.js";
 
 export default function Explore() {
 
@@ -53,7 +54,7 @@ export default function Explore() {
         
     <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">Parts of the Brain</h3>
 
-              <Button variant="explore" onClick={() => (window as any).loadButton('/explore-assets/models/standard/standard_scene.gltf')}>Frontal Lobe </Button> 
+              <Button variant="explore" onClick={() =>loadModel('/explore-assets/models/standard/standard_scene.gltf')}>Frontal Lobe </Button> 
               <Button variant="explore">Parietal Lobe </Button>
               <Button variant="explore">Occipital Lobe </Button>
               <Button variant="explore">Temporal Lobe </Button>
@@ -63,7 +64,7 @@ export default function Explore() {
       <br/>
       <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">Types of Diseases</h3>
             
-            <Button variant="explore"> Glioblastoma </Button>
+            <Button variant="explore" onClick={() => (window as any).loadButton('/explore-assets/models/standard/glioblastoma.gltf')}> Glioblastoma </Button>
             <Button variant="explore"> Glioma </Button>
             <Button variant="explore"> Metastatic Disease </Button>
 
