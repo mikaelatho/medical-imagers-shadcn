@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import loadModel from "./navigator.js";
-
+import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 export default function Explore() {
 
   useEffect(() => {
@@ -75,20 +75,63 @@ export default function Explore() {
 
 {/* ----------INFO LINKS---------- */}
 <br/>
-<div  style={{background: '#E7E7E7', width: '100%', height: '300px'}}>
 
-<h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left"> Want to Learn More? </h3>
+        <div className="px-6 sm:px-20 pb-20 items-center">
+          <h2 className="text-center text-2xl py-5 sm:text-3xl font-bold font-source-serif-4 text-blue-700 my-5"> Want to learn more? </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div>
 
-    <div className="flex gap-4"> 
-          
-    </div>
+              {/* ----------CARD 1---------- */}
+              <Card className="relative mx-auto w-full max-w-sm pt-0">
+                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+                <img
+                  src="/mri2.png"
+                  alt="6-sided MRI visualization"
+                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
+                />
+                <CardFooter>
+                  <Button className="w-full">Advanced MRI Imaging</Button>
+                </CardFooter>
+              </Card>
+            </div>
+            <div>
 
-</div>
+              {/* ----------CARD 2---------- */}
+              <Card className="relative mx-auto w-full max-w-sm pt-0">
+                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+                <img
+                  src="/mri3.png"
+                  alt="6-sided MRI visualization"
+                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover  brightness-80 dark:brightness-40"
+                />
+                <CardFooter>
+                  <Button className="w-full">Data Sources </Button>
+                </CardFooter>
+              </Card>
+            </div>
+            <div>
+
+               {/* ----------CARD 3---------- */}
+              <Card className="relative mx-auto w-full max-w-sm pt-0">
+                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+                <img
+                  src="/mri4.png"
+                  alt="6-sided MRI visualization"
+                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
+                />
+                <CardFooter>
+                  <Button className="w-full">Check your Knowledge</Button>
+                </CardFooter>
+              </Card>
+
+            </div>
+          </div>
+          </div>
 
 {/* ----------WALK THROUGH---------- */}
 
 <div className="text-left" style={{padding: '10%'}}>
-
+<h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">How to Use the Interactive Viewer</h2>
 <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left"> 1. Start With the Anatomical Planes </h3>
 <p> MRI scans are shown in different views (axial, sagittal, or coronal). 
         Axial view shows upper and lower planes, 
