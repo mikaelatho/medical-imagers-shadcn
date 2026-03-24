@@ -1,17 +1,152 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import loadModel from "./navigator.js";
-import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-export default function Explore() {
+import { Card, CardFooter } from "@/components/ui/card";
 
+export default function Explore() {
+const viewerRef = useRef<HTMLDivElement | null>(null);
+const loadModelRef = useRef<((path: string) => void) | null>(null);
+
+// ------FILE 1------
   useEffect(() => {
-    import("./navigator.js")
-      .catch((err) => console.error("Failed to load navigator:", err));
+    if (!viewerRef.current) {
+      return;
+    }
+
+    // ------RENDERER------
+    const viewer = viewerRef.current;
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.setClearColor(0x000000);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    // ------SCENE------
+    const scene = new THREE.Scene();
+
+    // ------CAMERA------
+    const camera = new THREE.PerspectiveCamera(45, 1, 1, 1000);
+    camera.position.set(4, 5, 11);
+
+    // ------CONTROLS------
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.enablePan = false;
+    controls.minDistance = 5;
+    controls.maxDistance = 20;
+    controls.minPolarAngle = 0.5;
+    controls.maxPolarAngle = 1.5;
+    controls.minAzimuthAngle = -Infinity;
+    controls.maxAzimuthAngle = Infinity;
+    controls.autoRotate = false;
+    controls.target = new THREE.Vector3(0, 1, 0);
+    controls.update();
+
+    // ------LIGHTS------
+    const spotLight = new THREE.SpotLight(0xffffff, 500, 100, 0.38, 1);
+    spotLight.position.set(0, 25, 0);
+    spotLight.castShadow = true;
+    spotLight.shadow.bias = -0.0001;
+    scene.add(spotLight);
+
+    const leftLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
+    leftLight.position.set(5, 5, 0);
+    leftLight.lookAt(0, 0, 0);
+    scene.add(leftLight);
+
+    const rightLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
+    rightLight.position.set(-5, 5, 0);
+    rightLight.lookAt(0, 0, 0);
+    scene.add(rightLight);
+
+    const backLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
+    backLight.position.set(0, 5, -5);
+    backLight.lookAt(0, 0, 0);
+    scene.add(backLight);
+
+    const frontLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
+    frontLight.position.set(0, 5, 5);
+    frontLight.lookAt(0, 0, 0);
+    scene.add(frontLight);
+
+    // ------LOADER------
+    const loader = new GLTFLoader();
+    let mesh: THREE.Group | null = null;
+
+    // ------RESIZE------
+    const resize = () => {
+      const width = viewer.clientWidth;
+      const height = viewer.clientHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / Math.max(height, 1);
+      camera.updateProjectionMatrix();
+    };
+
+    // ------MODEL------
+    const loadModel = (path: string) => {
+      loader.load(
+        path,
+        (gltf: { scene: THREE.Group }) => {
+          if (mesh) {
+            scene.remove(mesh);
+          }
+
+          mesh = gltf.scene;
+          mesh.traverse((child: THREE.Object3D) => {
+            if (child instanceof THREE.Mesh) {
+              child.castShadow = true;
+              child.receiveShadow = true;
+            }
+          });
+
+          mesh.position.set(0, 1.0, -1);
+          scene.add(mesh);
+        },
+        undefined,
+        (error: unknown) => {
+          console.error(error);
+        }
+      );
+    };
+
+    viewer.appendChild(renderer.domElement);
+    resize();
+    window.addEventListener("resize", resize);
+
+    // ------ACCESSORS------
+    loadModelRef.current = loadModel;
+    loadModel("/explore-assets/models/standard/standard_scene.gltf");
+
+    // ------UPDATE AND RENDER------
+    let animationFrame = 0;
+    const animate = () => {
+      animationFrame = window.requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // ------EXPORT------
+    return () => {
+      window.removeEventListener("resize", resize);
+      loadModelRef.current = null;
+      window.cancelAnimationFrame(animationFrame);
+      controls.dispose();
+      renderer.dispose();
+      renderer.domElement.remove();
+    };
   }, []);
 
+  const loadModel = (path: string) => {
+    loadModelRef.current?.(path);
+  };
+
+  // ------FILE 2------
   return (
 
 <main className="min-h-screen flex flex-col items-center justify-start">
@@ -40,11 +175,11 @@ export default function Explore() {
 
 </div>
 
-  <div id="float-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin: ' 0 auto', width: '25%'}}>
+  <div id="float-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'stretch', margin: '0 auto', width: '90%', gap: '20px'}}>
   
   {/* ----------NAVIGATOR CONTAINER---------- */}
-  <div id="float-child" style={{flex: '1', padding: '100%'}}>
-    <div>NAVIGATOR.JS HERE  currently at bottom of page</div>
+  <div id="float-child" style={{flex: '2', minHeight: '460px', border: '2px solid black', borderRadius: '10px', overflow: 'hidden'}}>
+    <div ref={viewerRef} style={{width: '100%', height: '100%'}} />
   </div>
   
   {/* ----------BUTTON CONTAINER---------- */}
@@ -64,7 +199,7 @@ export default function Explore() {
       <br/>
       <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">Types of Diseases</h3>
             
-            <Button variant="explore" onClick={() => (window as any).loadButton('/explore-assets/models/standard/glioblastoma.gltf')}> Glioblastoma </Button>
+            <Button variant="explore" onClick={() => loadModel('/explore-assets/models/standard/glioblastoma.gltf')}> Glioblastoma </Button>
             <Button variant="explore"> Glioma </Button>
             <Button variant="explore"> Metastatic Disease </Button>
 
@@ -130,7 +265,7 @@ export default function Explore() {
 
 {/* ----------WALK THROUGH---------- */}
 
-<div className="text-left" style={{padding: '10%'}}>
+<div className="text-left" style={{paddingLeft: '10%', paddingRight: '10%', paddingBottom: '10%'}}>
 <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">How to Use the Interactive Viewer</h2>
 <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left"> 1. Start With the Anatomical Planes </h3>
 <p> MRI scans are shown in different views (axial, sagittal, or coronal). 

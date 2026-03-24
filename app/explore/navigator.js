@@ -94,10 +94,6 @@ mesh = gltf.scene;
   scene.add(mesh);
 
   // document.getElementById('progress-container').style.display = 'none';
-}, (xhr) => {
-  // console.log(`loading ${xhr.loaded / xhr.total * 100}%`);
-}, (error) => {
-  console.error(error);
 });
 }
 
