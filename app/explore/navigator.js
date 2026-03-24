@@ -1,118 +1,210 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+"use client";
 
-// ------RENDERER------
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000);
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+import {navigator} from "./navigator";
+import { Button } from "@/components/ui/button";
+import { Card, CardFooter } from "@/components/ui/card";
 
-document.body.appendChild(renderer.domElement);
+export default function Explore() {
+  const { viewerRef, loadModel } = navigator();
 
-// ------SCENE------
-const scene = new THREE.Scene();
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-start">
+      <div className="text-left">
+        {/* ----------HEADER---------- */}
+        <div id="heading">
+          <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">
+            Explore Brain MRI Visualizations
+          </h1>
+          <p className="text-wrap break-words sm:text-pretty">
+            In the following sections, you can view, interact with, and discover more about MRIs.
+          </p>
+        </div>
 
-// ------CAMERA------
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(4, 5, 11);
+        {/* ----------SUBTITLE---------- */}
+        <div>
+          <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+            Interactive MRI Viewer
+          </h2>
+          <p></p>
+        </div>
 
-// ------CONTROLS------
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.enablePan = false;
-controls.minDistance = 5;
-controls.maxDistance = 20;
-controls.minPolarAngle = 0.5;
-controls.maxPolarAngle = 1.5;
-controls.minAzimuthAngle = -Infinity;
-controls.maxAzimuthAngle = Infinity;
-controls.autoRotate = false;
-controls.target = new THREE.Vector3(0, 1, 0);
-controls.update();
+        {/* ----------FILTER BUTTONS---------- */}
+        <div className="flex gap-4">
+          <Button variant="explore">Volume Render</Button>
+          <Button variant="explore">Low Contrast</Button>
+        </div>
+      </div>
 
-// ------LIGHTS------
-const spotLight = new THREE.SpotLight(0xffffff, 500, 100, 0.38, 1);
-spotLight.position.set(0, 25, 0);
-spotLight.castShadow = true;
-spotLight.shadow.bias = -0.0001;
-scene.add(spotLight);
+      <div
+        id="float-container"
+        style={{ display: "flex", justifyContent: "center", alignItems: "stretch", margin: "0 auto", width: "90%", gap: "20px" }}
+      >
+        {/* ----------NAVIGATOR CONTAINER---------- */}
+        <div
+          id="float-child"
+          style={{ flex: "2", minHeight: "460px", border: "2px solid black", borderRadius: "10px", overflow: "hidden" }}
+        >
+          <div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
+        </div>
 
-const leftLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
-leftLight.position.set( 5, 5, 0 );
-leftLight.lookAt( 0, 0, 0 );
-scene.add( leftLight )
+        {/* ----------BUTTON CONTAINER---------- */}
+        <div
+          id="float-child"
+          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "10%", marginRight: "20px" }}
+        >
+          <Button variant="secondary">Exploration Guide</Button>
+          <div id="right">
+            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+              Parts of the Brain
+            </h3>
 
-const rightLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
-rightLight.position.set( -5, 5, 0 );
-rightLight.lookAt( 0, 0, 0 );
-scene.add( rightLight )
+            <Button variant="explore" onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}>
+              Frontal Lobe
+            </Button>
+            <Button variant="explore">Parietal Lobe</Button>
+            <Button variant="explore">Occipital Lobe</Button>
+            <Button variant="explore">Temporal Lobe</Button>
+            <Button variant="explore">Cerebellum</Button>
+            <Button variant="explore">Spinal Cord</Button>
 
-const backLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
-backLight.position.set( 0, 5, -5 );
-backLight.lookAt( 0, 0, 0 );
-scene.add( backLight )
+            <br />
+            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+              Types of Diseases
+            </h3>
 
-const frontLight = new THREE.RectAreaLight( 0xffffff, 1, 10, 10 );
-frontLight.position.set( 0, 5, 5 );
-frontLight.lookAt( 0, 0, 0 );
-scene.add( frontLight )
+            <Button variant="explore" onClick={() => loadModel("/explore-assets/models/standard/glioblastoma.gltf")}>
+              Glioblastoma
+            </Button>
+            <Button variant="explore">Glioma</Button>
+            <Button variant="explore">Metastatic Disease</Button>
+          </div>
+        </div>
+      </div>
 
-// ------MODEL------
-let mesh = null;
-const loader = new GLTFLoader();
+      {/* ----------INFO LINKS---------- */}
+      <br />
 
-function loadModel(path){
- 
-loader.load(path, (gltf) => {
-  console.log('loading model');
+      <div className="px-6 sm:px-20 pb-20 items-center">
+        <h2 className="text-center text-2xl py-5 sm:text-3xl font-bold font-source-serif-4 text-blue-700 my-5">
+          Want to learn more?
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div>
+            {/* ----------CARD 1---------- */}
+            <Card className="relative mx-auto w-full max-w-sm pt-0">
+              <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+              <img
+                src="/mri2.png"
+                alt="6-sided MRI visualization"
+                className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
+              />
+              <CardFooter>
+                <Button className="w-full">Advanced MRI Imaging</Button>
+              </CardFooter>
+            </Card>
+          </div>
+          <div>
+            {/* ----------CARD 2---------- */}
+            <Card className="relative mx-auto w-full max-w-sm pt-0">
+              <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+              <img
+                src="/mri3.png"
+                alt="6-sided MRI visualization"
+                className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
+              />
+              <CardFooter>
+                <Button className="w-full">Data Sources</Button>
+              </CardFooter>
+            </Card>
+          </div>
+          <div>
+            {/* ----------CARD 3---------- */}
+            <Card className="relative mx-auto w-full max-w-sm pt-0">
+              <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
+              <img
+                src="/mri4.png"
+                alt="6-sided MRI visualization"
+                className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
+              />
+              <CardFooter>
+                <Button className="w-full">Check your Knowledge</Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+      </div>
 
-if(mesh){
+      {/* ----------WALK THROUGH---------- */}
 
-  mesh.traverse((child) => {
-    if (child.isMesh) {
-      child.castShadow = true;
-      child.receiveShadow = true;
-    }
-  });
+      <div className="text-left" style={{ paddingLeft: "10%", paddingRight: "10%", paddingBottom: "10%" }}>
+        <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          How to Use the Interactive Viewer
+        </h2>
+        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          1. Start With the Anatomical Planes
+        </h3>
+        <p>
+          MRI scans are shown in different views (axial, sagittal, or coronal). Axial view shows upper and lower planes,
+          sagittal view shows the scan's left and right planes, and axial view shows the scan's front and back planes. Take
+          a moment to orient yourself before looking at details.
+        </p>
+        <br />
+
+        <div className="flex gap-4">
+          <img
+            src={"/explore-assets/images/CoronalAnterior_Slice.png"}
+            alt="Coronal Anterior Slice"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <img
+            src={"/explore-assets/images/LeftSagittal_Slice.png"}
+            alt="Left Sagittal Slice"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <img
+            src={"/explore-assets/images/UpperAxial_Slice.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "200px", height: "200px" }}
+          />
+        </div>
+
+        <br />
+        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          2. Observe the Overall Structure
+        </h3>
+        <p>Focus on the big picture first. Notice the shape and volume before jumping into details.</p>
+        <br />
+
+        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          3. Identify Key Brain Regions
+        </h3>
+        <p>
+          Once you're comfortable, start recognizing major sections of the brain: the frontal lobe, parietal lobe, occipital
+          lobe, temporal lobe, cerebellum, and spinal cord. The buttons in the interactive viewer can help you here.
+        </p>
+        <br />
+
+        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          4. Understanding Scan Contrasts
+        </h3>
+        <p>
+          MRI scans are shown in different views (axial, sagittal, or coronal). Certain matter, such as tumors appears on
+          scans with brighter tones. This helps highlight differences between natural brain structures and areas of interest.
+          In the contour view (three images at the bottom of the screen), areas of interest are typically a bright, light blue
+          or orange.
+        </p>
+        <br />
+
+        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          5. Explore at Your Own Pace
+        </h3>
+        <p>
+          MRI scans are shown in different views (axial, sagittal, or coronal). Educational navigation takes practice. Zoom in,
+          switch views (volume render and low contrast), and revisit sections as needed. There is no "right speed." Learning
+          visually is the main goal.
+        </p>
+        <br />
+      </div>
+    </main>
+  );
 }
-
-mesh = gltf.scene;
-
-  mesh.traverse((child) => {
-    scene.remove(mesh);
-    if (child.isMesh) {
-      child.castShadow = true;
-      child.receiveShadow = true;
-    }
-  });
-
-  mesh.position.set(0, 4.00, -1);
-  scene.add(mesh);
-
-  // document.getElementById('progress-container').style.display = 'none';
-});
-}
-
-// ------ACCESSORS------
-export default loadModel;
-loadModel('/explore-assets/models/standard/standard_scene.gltf');
-
-// ------WINDOW------
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
-// ------UPDATE AND RENDER------
-function animate() {
-  requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
-}
-
-animate();
