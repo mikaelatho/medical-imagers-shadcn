@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
 
 export default function Explore() {
+
   const { viewerRef, loadModel } = navigator();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start">
       <div className="text-left">
         {/* ----------HEADER---------- */}
-        <div id="heading">
-          <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">
+<div>
+          <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5 text-left">
             Explore Brain MRI Visualizations
           </h1>
           <p className="text-wrap break-words sm:text-pretty">
             In the following sections, you can view, interact with, and discover more about MRIs.
           </p>
-        </div>
-
+</div>
         {/* ----------SUBTITLE---------- */}
         <div>
           <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
@@ -30,8 +30,9 @@ export default function Explore() {
 
         {/* ----------FILTER BUTTONS---------- */}
         <div className="flex gap-4">
-          <Button variant="explore">Volume Render</Button>
-          <Button variant="explore">Low Contrast</Button>
+          <Button variant="explore" style={{marginBottom: "5%"}}>Volume Render</Button>
+          <Button variant="explore" style={{marginBottom: "5%"}}>Low Contrast</Button>
+          <br/>
         </div>
       </div>
 
@@ -42,7 +43,7 @@ export default function Explore() {
         {/* ----------NAVIGATOR CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "2", minHeight: "460px", border: "2px solid black", borderRadius: "10px", overflow: "hidden" }}
+          style={{ flex: "10", minHeight: "460px", border: "2px solid black", borderRadius: "10px", overflow: "hidden" }}
         >
           <div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
         </div>
@@ -50,33 +51,76 @@ export default function Explore() {
         {/* ----------BUTTON CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "10%", marginRight: "20px" }}
+          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
         >
-          <Button variant="secondary">Exploration Guide</Button>
+          <Button variant="secondary" style={{marginBottom: "5%"}}>Exploration Guide</Button>
           <div id="right">
             <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
               Parts of the Brain
             </h3>
 
-            <Button variant="explore" onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}>
-              Frontal Lobe
+            <Button 
+                variant="explore" 
+                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+                style={{marginBottom: "5%"}}>
+                  Frontal Lobe
             </Button>
-            <Button variant="explore">Parietal Lobe</Button>
-            <Button variant="explore">Occipital Lobe</Button>
-            <Button variant="explore">Temporal Lobe</Button>
-            <Button variant="explore">Cerebellum</Button>
-            <Button variant="explore">Spinal Cord</Button>
+
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Parietal Lobe
+            </Button>
+
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Occipital Lobe
+              </Button>
+
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Temporal Lobe
+            </Button>
+            
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Cerebellum
+              </Button>
+            
+            <Button 
+            variant="explore"
+            style={{marginBottom: "5%"}}>
+              Spinal Cord
+            </Button>
 
             <br />
             <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
               Types of Diseases
             </h3>
 
-            <Button variant="explore" onClick={() => loadModel("/explore-assets/models/standard/glioblastoma.gltf")}>
+            <Button 
+              variant="explore" 
+              onClick={() => loadModel("/explore-assets/models/standard/glioblastoma.gltf")}
+              style={{marginBottom: "5%"}}
+              >
               Glioblastoma
             </Button>
-            <Button variant="explore">Glioma</Button>
-            <Button variant="explore">Metastatic Disease</Button>
+
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Glioma
+            </Button>
+
+            <Button 
+              variant="explore"
+              style={{marginBottom: "5%"}}>
+                Metastatic Disease
+            </Button>
+
           </div>
         </div>
       </div>
