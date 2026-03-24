@@ -101,7 +101,7 @@ export function navigator() {
             }
           });
 
-          mesh.position.set(-0.8, .75, -1);
+          mesh.position.set(0.5, 1.25, 2);
           scene.add(mesh);
         },
         undefined,

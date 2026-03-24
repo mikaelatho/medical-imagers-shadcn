@@ -43,9 +43,27 @@ export default function Explore() {
         {/* ----------NAVIGATOR CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "10", minHeight: "460px", border: "2px solid black", borderRadius: "10px", overflow: "hidden" }}
+          style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
+          <div ref={viewerRef} style={{ width: "100%", height: "75%" }} />
+          
+          <div className="flex gap-4" style={{paddingTop: "5px"}}>
+          <img
+            src={"/explore-assets/images/CoronalAnterior_Slice.png"}
+            alt="Coronal Anterior Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+          />
+          <img
+            src={"/explore-assets/images/LeftSagittal_Slice.png"}
+            alt="Left Sagittal Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+          />
+          <img
+            src={"/explore-assets/images/UpperAxial_Slice.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+          />
+        </div>
         </div>
 
         {/* ----------BUTTON CONTAINER---------- */}
