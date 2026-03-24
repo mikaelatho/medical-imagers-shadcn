@@ -4,6 +4,8 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 export function navigator() {
+
+// ------REFERENCES------
   const viewerRef = useRef<HTMLDivElement | null>(null);
   const loadModelRef = useRef<((path: string) => void) | null>(null);
 
