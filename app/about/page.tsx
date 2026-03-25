@@ -34,7 +34,7 @@ export default function About() {
         <div className="px-6 sm:px-20 py-20">
           {/* meet the team */}
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">About</h1>
-          <p className="font-inter text-slate-800 py-5">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
+          <p className="font-inter text-slate-800 py-5 max-w-7xl">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
           <h3 className="text-left text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Meet the Team</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 py-8">
             <div>
@@ -48,7 +48,7 @@ export default function About() {
                 <CardHeader>
                   <CardAction>
                   </CardAction>
-                  <CardTitle>Ren</CardTitle>
+                  <CardTitle className="">Ren</CardTitle>
                   <CardDescription>
                     Data Vis
                     <Button variant="link" asChild><Link href="">Portfolio</Link></Button>

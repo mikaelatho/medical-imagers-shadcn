@@ -42,7 +42,7 @@ export default function LearnPage() {
           What is an MRI?
         </h2>
         <div className="max-w-[1320px] mx-auto mt-10">
-          <p className="font-inter font-semibold text-[20px] leading-[28px] tracking-[-0.005em] text-black">
+          <p className="font-inter font-semibold text-[20px] leading-[28px] tracking-[-0.005em] text-slate-800">
             An MRI (Magnetic Resonance Imaging) is a medical imaging technique used to visualize internal structures of the body in detail. Compared to X-rays or CT scans, MRI uses strong magnetic fields and radio waves to create detailed images of organs, tissues, and the nervous system.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function LearnPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-40 text-left">
           <div className="place-items-center self-center">
             <h2 className="text-3xl md:text-4xl font-bold font-source-serif-4 my-5 text-slate-900">
-              How <span className="text-blue-600">MRI</span> Works?
+              How do <span className="text-blue-600">MRIs</span> Work?
             </h2>
           </div>
 
