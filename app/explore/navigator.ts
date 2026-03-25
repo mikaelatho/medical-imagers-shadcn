@@ -111,6 +111,11 @@ export function navigator() {
       );
     };
 
+     // ------OPACITY------
+     const setOpacity = () => {
+        
+     }
+
     viewer.appendChild(renderer.domElement);
     resize();
     window.addEventListener("resize", resize);

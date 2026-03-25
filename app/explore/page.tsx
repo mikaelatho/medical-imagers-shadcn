@@ -3,6 +3,7 @@
 import { navigator } from "./navigator";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Explore() {
 
@@ -11,7 +12,9 @@ export default function Explore() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-start">
       <div className="text-left">
+        
         {/* ----------HEADER---------- */}
+        
 <div>
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5 text-left">
             Explore Brain MRI Visualizations
@@ -45,7 +48,7 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div ref={viewerRef} style={{ width: "100%", height: "75%" }} />
+          <div ref={viewerRef} style={{ width: "100%", height: "75%" , borderWidth: "10px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}} />
           
           <div className="flex gap-4" style={{paddingTop: "5px"}}>
           <img
@@ -69,9 +72,16 @@ export default function Explore() {
         {/* ----------BUTTON CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
+          style={{ flex: "1", borderWidth: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
         >
+          
           <Button variant="secondary" style={{marginBottom: "5%"}}>Exploration Guide</Button>
+            <Button 
+                variant="explore" 
+                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+                style={{marginBottom: "5%"}}>
+                  Default
+            </Button>
           <div id="right">
             <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
               Parts of the Brain
@@ -121,7 +131,7 @@ export default function Explore() {
 
             <Button 
               variant="explore" 
-              onClick={() => loadModel("/explore-assets/models/standard/glioblastoma.gltf")}
+              onClick={() => loadModel("/explore-assets/models/glioblastoma/glioblastoma.gltf")}
               style={{marginBottom: "5%"}}
               >
               Glioblastoma
@@ -129,12 +139,14 @@ export default function Explore() {
 
             <Button 
               variant="explore"
+              onClick={() => loadModel("/explore-assets/models/glioma2/glioma2.gltf")}
               style={{marginBottom: "5%"}}>
                 Glioma
             </Button>
 
             <Button 
               variant="explore"
+              onClick={() => loadModel("/explore-assets/models/meta2/meta2.gltf")}
               style={{marginBottom: "5%"}}>
                 Metastatic Disease
             </Button>
@@ -148,6 +160,7 @@ export default function Explore() {
 
       <div className="px-6 sm:px-20 pb-20 items-center">
         <h2 className="text-center text-2xl py-5 sm:text-3xl font-bold font-source-serif-4 text-blue-700 my-5">
+          <br/><br/>
           Want to learn more?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -161,7 +174,9 @@ export default function Explore() {
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
               <CardFooter>
+                <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4632105/">
                 <Button className="w-full">Advanced MRI Imaging</Button>
+                </Link>
               </CardFooter>
             </Card>
           </div>
@@ -175,7 +190,9 @@ export default function Explore() {
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
               <CardFooter>
+                <Link href="https://www.cancerimagingarchive.net/browse-collections/">
                 <Button className="w-full">Data Sources</Button>
+                </Link>
               </CardFooter>
             </Card>
           </div>
@@ -189,7 +206,9 @@ export default function Explore() {
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
               <CardFooter>
+                <Link href="../games/page.tsx">
                 <Button className="w-full">Check your Knowledge</Button>
+                </Link>
               </CardFooter>
             </Card>
           </div>
