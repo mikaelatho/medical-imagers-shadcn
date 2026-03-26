@@ -79,8 +79,8 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/games">Games</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/games" title="Header title">
-                    A description of the this section
+                  <ListItem href="/games" title="Play now">
+                    Explore our MRI Diagnostic Trainer simulation game and progress.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -121,7 +121,7 @@ export function Nav() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-              <SheetTitle className="text-left font-inter font-bold">Navigation</SheetTitle>
+              <SheetTitle className="text-left font-inter font-bold text-blue-600">LearnMRI</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col gap-4 mt-8 mx-6">
               {/* Mobile Links */}

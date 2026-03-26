@@ -27,17 +27,17 @@ export default function Home() {
     <main>
       {/*main page content*/}
       <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 items-center justify-center max-w-7xl flex-auto"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/4 rotate-[35deg] bg-gradient-to-tr from-[#BFFFF6] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 items-center justify-center max-w-7xl flex-auto"
+        aria-hidden="true"
+      >
+        <div
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/4 rotate-[35deg] bg-gradient-to-tr from-[#BFFFF6] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+        />
+      </div>
       <div className="items-center justify-center mx-auto max-w-7xl flex-auto min-h-screen relative isolate overflow-hidden">
         <div className="px-6 sm:px-20 py-20 flex flex-col md:flex-row gap-2 items-center">
           <div className="flex-1 text-center md:text-left">
@@ -64,7 +64,7 @@ export default function Home() {
 
         {/* card section */}
         <div className="px-6 sm:px-20 pb-20 items-center">
-          <h2 className="text-center text-2xl py-5 sm:text-3xl font-bold font-source-serif-4 text-blue-700 my-5">What you can do with our website</h2>
+          <h2 className="text-center text-2xl py-5 sm:text-3xl font-medium font-source-serif-4 text-blue-700 my-5">What you can do with our website</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div>
               <Card className="relative mx-auto w-full max-w-sm pt-0">
