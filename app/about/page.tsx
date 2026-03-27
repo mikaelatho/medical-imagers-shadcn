@@ -30,6 +30,18 @@ export default function About() {
   return (
     <main>
       {/*main page content (edit in div below)*/}
+      <div
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 items-center justify-center max-w-7xl flex-auto"
+        aria-hidden="true"
+      >
+        <div
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/6 rotate-[40deg] bg-gradient-to-tr from-[#9089fc] to-[#BFFFF6] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+        />
+      </div>
       <div className="items-center justify-center mx-auto max-w-7xl flex-auto min-h-screen">
         <div className="px-6 sm:px-20 py-20">
           {/* meet the team */}
@@ -324,7 +336,7 @@ export default function About() {
           </div>
           <div className="flex justify-center items-center">
             {/* scrollable List of sources go here */}
-            <ScrollArea className="h-72 w-full max-w-md lg:max-w-lg rounded-md border p-4">
+            <ScrollArea className="bg-[#fcfcfc] shadow-sm h-72 w-full max-w-md lg:max-w-lg rounded-md border p-4">
               <p className="py-4">Centers for Disease Control and Prevention (U.S). Facts About Computed Tomography (CT) Scans (<Link className='underline' href='https://www.cdc.gov/radiation-health/data-research/facts-stats/ct-scans.html?CDC_AAref_Val=https://www.cdc.gov/nceh/radiation/ct_scans.html'>https://www.cdc.gov/radiation-health/data-research/facts-stats/ct-scans.html?CDC_AAref_Val=https://www.cdc.gov/nceh/radiation/ct_scans.html</Link>). Last updated 2/2024.
               </p>
               <Separator></Separator>
