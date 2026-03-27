@@ -37,7 +37,7 @@ export default function Games() {
             </div>
           </div>
         </div>
-        {/* Progress */}
+        {/* Progress Section*/}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 px-6 sm:px-20 py-5 pb-20 items-stretch justify-center">
           <div className="rounded-[1vw] bg-linear-to-t from-blue-600 to-blue-400 py-10 px-2">
             <h3 className="font-inter font-medium text-xl text-white text-center py-2 ">Games Completed</h3>
