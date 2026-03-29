@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { navigator } from "./navigator";
+// import { getContourImages, type Contour } from "./contour";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function Explore() {
 
-  const { viewerRef, loadModel } = navigator();
+  const { viewerRef, loadModel, setOpacity } = navigator();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start">
@@ -33,8 +35,8 @@ export default function Explore() {
 
         {/* ----------FILTER BUTTONS---------- */}
         <div className="flex gap-4">
-          <Button variant="explore" style={{marginBottom: "5%"}}>Volume Render</Button>
-          <Button variant="explore" style={{marginBottom: "5%"}}>Low Contrast</Button>
+          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(1)}>Volume Render</Button>
+          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.25)}>Low Contrast</Button>
           <br/>
         </div>
       </div>

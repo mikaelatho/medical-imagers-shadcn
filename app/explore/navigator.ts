@@ -8,6 +8,7 @@ export function navigator() {
 // ------REFERENCES------
   const viewerRef = useRef<HTMLDivElement | null>(null);
   const loadModelRef = useRef<((path: string) => void) | null>(null);
+  const opacityRef = useRef<((opacity: number) => void) | null>(null);
 
   useEffect(() => {
     if (!viewerRef.current) {
@@ -112,15 +113,25 @@ export function navigator() {
     };
 
      // ------OPACITY------
-     const setOpacity = () => {
-        
-     }
+     const setOpacity = (opacity: number) => {
+          
+        if(!mesh) return;
+
+          mesh.traverse((child: THREE.Object3D) => {
+            if (child instanceof THREE.Mesh) {
+              const childMat = child.material;
+                childMat.transparent = opacity < 1;
+                childMat.opacity = opacity;
+            }
+          });
+     };
 
     viewer.appendChild(renderer.domElement);
     resize();
     window.addEventListener("resize", resize);
 
     // ------ACCESSORS------
+    opacityRef.current = setOpacity;
     loadModelRef.current = loadModel;
     loadModel("/explore-assets/models/standard/standard_scene.gltf");
 
@@ -137,6 +148,7 @@ export function navigator() {
     return () => {
       window.removeEventListener("resize", resize);
       loadModelRef.current = null;
+      opacityRef.current = null;
       window.cancelAnimationFrame(animationFrame);
       controls.dispose();
       renderer.dispose();
@@ -148,5 +160,9 @@ export function navigator() {
     loadModelRef.current?.(path);
   };
 
-  return { viewerRef, loadModel };
+  const setOpacity = (opacity: number) => {
+    opacityRef.current?.(opacity);
+  };
+
+  return { viewerRef, loadModel, setOpacity };
 }
