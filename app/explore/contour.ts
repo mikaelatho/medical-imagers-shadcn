@@ -8,21 +8,21 @@ img?.addEventListener('click', function(){
    
     if(toggle === "gbm")
     {
-        anterior = "/explore-assets/images/gbm/CoronalAnterior_Slice.png"
-        sagittal = "/explore-assets/images/gbm/LeftSagittal_Slice.png"
-        slice = "/explore-assets/images/gbm/UpperAxial_Slice.png"
+        anterior = "/explore-assets/images/gbm/Glioblastoma_Anterior_Slice.png"
+        sagittal = "/explore-assets/images/gbm/Glioblastoma_Sagittal_Slice.png"
+        slice = "/explore-assets/images/gbm/Glioblastoma_Axial_Slice.png"
     }
     else if(toggle === "glioma")
     {
-        anterior = "/explore-assets/images/glioma/CoronalAnterior_Slice.png"
-        sagittal = "/explore-assets/images/glioma/LeftSagittal_Slice.png"
-        slice = "/explore-assets/images/glioma/UpperAxial_Slice.png"   
+        anterior = "/explore-assets/images/glioma/Glioma_lAnterior_Slice.png"
+        sagittal = "/explore-assets/images/glioma/Glioma_Sagittal_Slice.png"
+        slice = "/explore-assets/images/glioma/Glioma_Axial_Slice.png"   
     }
     else if(toggle === "meta")
     {
-        anterior = "/explore-assets/images/meta/CoronalAnterior_Slice.png"
-        sagittal = "/explore-assets/images/meta/LeftSagittal_Slice.png"
-        slice = "/explore-assets/images/meta/UpperAxial_Slice.png"
+        anterior = "/explore-assets/images/meta/Glioma_Anterior_Slice.png"
+        sagittal = "/explore-assets/images/meta/Glioma_Sagittal_Slice.png"
+        slice = "/explore-assets/images/meta/Glioma_Axial_Slice.png"
     }
     else{
         anterior = "/explore-assets/images/CoronalAnterior_Slice.png"
