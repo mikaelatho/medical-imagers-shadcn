@@ -52,8 +52,8 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{position: "relative", width: "100%", height: "75%" , borderWidth: "30px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}}>
-            <div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
+          <div style={{position: "relative", width: "100%", height: "75%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
+            <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button 
               variant="explore" 
               onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
@@ -253,7 +253,7 @@ export default function Explore() {
         <img
             src={"/explore-assets/images/walkthrough/wt1.png"}
             alt="Upper Axial Slice"
-             style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+             style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
           />
         </div>
 
@@ -271,7 +271,7 @@ export default function Explore() {
         <img
             src={"/explore-assets/images/walkthrough/wt2.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
           />
         </div>
 
@@ -292,7 +292,7 @@ export default function Explore() {
         <img
             src={"/explore-assets/images/walkthrough/wt2.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
           />
         </div>
 
@@ -315,7 +315,7 @@ export default function Explore() {
         <img
             src={"/explore-assets/images/walkthrough/wt4.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
           />
         </div>
 
@@ -337,7 +337,7 @@ export default function Explore() {
         <img
             src={"/explore-assets/images/walkthrough/wt5.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+            style={{ width: "370px", height: "200px", borderWidth: "5px", borderStyle: "solid", borderColor: "#F5F5F5", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
           />
         </div>
       </div>
