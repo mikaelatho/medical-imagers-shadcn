@@ -36,7 +36,7 @@ export default function Explore() {
         {/* ----------FILTER BUTTONS---------- */}
         <div className="flex gap-4">
           <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(1)}>Volume Render</Button>
-          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.25)}>Low Contrast</Button>
+          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.15)}>Low Contrast</Button>
           <br/>
         </div>
       </div>
@@ -219,18 +219,19 @@ export default function Explore() {
 
       {/* ----------WALK THROUGH---------- */}
 
+          <div style={{marginLeft: "15%"}}>
+          <h2  className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+              How to Use the Interactive Viewer
+          </h2>
+
       <div style={{display: "grid", gridTemplateColumns: "50% 50%", gap: "30px", alignItems: "start", marginLeft: "start"}}>
 
       {/* ----------LEFT COLUMN---------- */}
 
-      <div style={{display: "flex", flexDirection: "column"}}>
-
-         {/* ---TITLE---*/}
-            <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
-              How to Use the Interactive Viewer
-          </h2>
+       {/* ---TITLE---*/}
 
           {/* ---STEP ONE---*/}
+          <div>
           <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
               1. Start With the Anatomical Planes
           </h3>
@@ -241,14 +242,36 @@ export default function Explore() {
         </p>
         <br />
         <br />
+        </div>
 
+         {/* ---IMAGE ONE---*/}
+        <div>
+        <img
+            src={"/explore-assets/images/walkthrough/wt1.png"}
+            alt="Upper Axial Slice"
+             style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+          />
+        </div>
+
+        <div>
          {/* ---STEP TWO---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           2. Observe the Overall Structure
         </h3>
         <p>Focus on the big picture first. Notice the shape and volume before jumping into details.</p>
         <br />
+        </div>
 
+        {/* ---IMAGE TWO---*/}
+        <div>
+        <img
+            src={"/explore-assets/images/walkthrough/wt2.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+          />
+        </div>
+
+        <div>
          {/* ---STEP THREE---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           3. Identify Key Brain Regions
@@ -258,8 +281,19 @@ export default function Explore() {
           lobe, temporal lobe, cerebellum, and spinal cord. The buttons in the interactive viewer can help you here.
         </p>
         <br />
+        </div>
+
+          {/* ---IMAGE THREE---*/}
+        <div>
+        <img
+            src={"/explore-assets/images/walkthrough/wt2.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+          />
+        </div>
 
          {/* ---STEP FOUR---*/}
+         <div>
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           4. Understanding Scan Contrasts
         </h3>
@@ -270,8 +304,19 @@ export default function Explore() {
           or orange.
         </p>
         <br />
+        </div>
+
+        {/* ---IMAGE FOUR---*/}
+        <div>
+        <img
+            src={"/explore-assets/images/walkthrough/wt4.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+          />
+        </div>
 
          {/* ---STEP FIVE---*/}
+         <div>
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           5. Explore at Your Own Pace
         </h3>
@@ -281,13 +326,18 @@ export default function Explore() {
           visually is the main goal.
         </p>
         <br />
-
         </div>
 
-        <div style={{display: "flex", flexDirection: "column"}}>
-
+                {/* ---IMAGE FIVE---*/}
+        <div>
+        <img
+            src={"/explore-assets/images/walkthrough/wt5.png"}
+            alt="Upper Axial Slice"
+            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
+          />
         </div>
-
+      </div>
+        <br/><br/><br/>
         </div>
     </main>
   );
