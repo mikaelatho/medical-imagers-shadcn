@@ -77,7 +77,7 @@ export default function Explore() {
           style={{ flex: "1", borderWidth: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
         >
           
-          <Button variant="secondary" style={{marginBottom: "5%"}}>Exploration Guide</Button>
+          <Button variant="secondary" style={{marginBottom: "5%"}} onClick={() => window.location.href="#explore"}>Exploration Guide</Button>
             <Button 
                 variant="explore" 
                 onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
@@ -219,8 +219,8 @@ export default function Explore() {
 
       {/* ----------WALK THROUGH---------- */}
 
-          <div style={{marginLeft: "15%"}}>
-          <h2  className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          <div style={{marginLeft: "15%"}} id="explore">
+          <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
               How to Use the Interactive Viewer
           </h2>
 
