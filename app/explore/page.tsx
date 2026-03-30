@@ -12,7 +12,7 @@ export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start">
+    <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
       <div className="text-left">
         
         {/* ----------HEADER---------- */}
@@ -26,15 +26,17 @@ export default function Explore() {
           </p>
 </div>
         {/* ----------SUBTITLE---------- */}
-        <div>
+        <div className="flex gap-4">
           <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
             Interactive MRI Viewer
           </h2>
+          <Button variant="explore" style={{marginBottom: "5%", marginTop: "22px"}} onClick={() => window.location.href="#explore"}>Exploration Guide</Button>
           <p></p>
         </div>
 
         {/* ----------FILTER BUTTONS---------- */}
         <div className="flex gap-4">
+          <p> View type: </p>
           <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(1)}>Volume Render</Button>
           <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.15)}>Low Contrast</Button>
           <br/>
@@ -50,8 +52,16 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div ref={viewerRef} style={{ width: "100%", height: "75%" , borderWidth: "10px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}} />
-          
+          <div style={{position: "relative", width: "100%", height: "75%" , borderWidth: "10px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}}>
+          <div ref={viewerRef} />
+                      <Button 
+                variant="explore" 
+                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+                style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
+                  Back to Default View
+            </Button>
+          </div>
+
           <div className="flex gap-4" style={{paddingTop: "5px"}}>
           <img
             src={"/explore-assets/images/CoronalAnterior_Slice.png"}
@@ -76,14 +86,7 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "1", borderWidth: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
         >
-          
-          <Button variant="secondary" style={{marginBottom: "5%"}} onClick={() => window.location.href="#explore"}>Exploration Guide</Button>
-            <Button 
-                variant="explore" 
-                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
-                style={{marginBottom: "5%"}}>
-                  Default
-            </Button>
+    
           <div id="right">
             <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
               Parts of the Brain
@@ -220,6 +223,7 @@ export default function Explore() {
       {/* ----------WALK THROUGH---------- */}
 
           <div style={{marginLeft: "15%"}} id="explore">
+            <br/><br/><br/>
           <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
               How to Use the Interactive Viewer
           </h2>
