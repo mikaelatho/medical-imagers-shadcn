@@ -219,45 +219,37 @@ export default function Explore() {
 
       {/* ----------WALK THROUGH---------- */}
 
-      <div className="text-left" style={{ paddingLeft: "10%", paddingRight: "10%", paddingBottom: "10%" }}>
-        <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
-          How to Use the Interactive Viewer
-        </h2>
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
-          1. Start With the Anatomical Planes
-        </h3>
-        <p>
-          MRI scans are shown in different views (axial, sagittal, or coronal). Axial view shows upper and lower planes,
-          sagittal view shows the scan's left and right planes, and axial view shows the scan's front and back planes. Take
-          a moment to orient yourself before looking at details.
+      <div style={{display: "grid", gridTemplateColumns: "50% 50%", gap: "30px", alignItems: "start", marginLeft: "start"}}>
+
+      {/* ----------LEFT COLUMN---------- */}
+
+      <div style={{display: "flex", flexDirection: "column"}}>
+
+         {/* ---TITLE---*/}
+            <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+              How to Use the Interactive Viewer
+          </h2>
+
+          {/* ---STEP ONE---*/}
+          <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+              1. Start With the Anatomical Planes
+          </h3>
+          <p>
+            MRI scans are shown in different views (axial, sagittal, or coronal). Axial view shows upper and lower planes,
+            sagittal view shows the scan's left and right planes, and axial view shows the scan's front and back planes. Take
+            a moment to orient yourself before looking at details.
         </p>
         <br />
-
-        <div className="flex gap-4">
-          <img
-            src={"/explore-assets/images/CoronalAnterior_Slice.png"}
-            alt="Coronal Anterior Slice"
-            style={{ width: "200px", height: "200px" }}
-          />
-          <img
-            src={"/explore-assets/images/LeftSagittal_Slice.png"}
-            alt="Left Sagittal Slice"
-            style={{ width: "200px", height: "200px" }}
-          />
-          <img
-            src={"/explore-assets/images/UpperAxial_Slice.png"}
-            alt="Upper Axial Slice"
-            style={{ width: "200px", height: "200px" }}
-          />
-        </div>
-
         <br />
+
+         {/* ---STEP TWO---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           2. Observe the Overall Structure
         </h3>
         <p>Focus on the big picture first. Notice the shape and volume before jumping into details.</p>
         <br />
 
+         {/* ---STEP THREE---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           3. Identify Key Brain Regions
         </h3>
@@ -267,6 +259,7 @@ export default function Explore() {
         </p>
         <br />
 
+         {/* ---STEP FOUR---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           4. Understanding Scan Contrasts
         </h3>
@@ -278,6 +271,7 @@ export default function Explore() {
         </p>
         <br />
 
+         {/* ---STEP FIVE---*/}
         <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
           5. Explore at Your Own Pace
         </h3>
@@ -287,7 +281,14 @@ export default function Explore() {
           visually is the main goal.
         </p>
         <br />
-      </div>
+
+        </div>
+
+        <div style={{display: "flex", flexDirection: "column"}}>
+
+        </div>
+
+        </div>
     </main>
   );
 }
