@@ -25,6 +25,7 @@ export default function Explore() {
             In the following sections, you can view, interact with, and discover more about MRIs.
           </p>
 </div>
+
         {/* ----------SUBTITLE---------- */}
         <div className="flex gap-4">
           <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
@@ -66,17 +67,17 @@ export default function Explore() {
           <img
             src={"/explore-assets/images/CoronalAnterior_Slice.png"}
             alt="Coronal Anterior Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px", height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={"/explore-assets/images/LeftSagittal_Slice.png"}
             alt="Left Sagittal Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px", height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={"/explore-assets/images/UpperAxial_Slice.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px" ,height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
         </div>
         </div>
