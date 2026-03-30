@@ -171,7 +171,7 @@ export default function Explore() {
             <Card className="relative mx-auto w-full max-w-sm pt-0">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
-                src="/mri2.png"
+                src="/explore-assets/images/info/info1.jpg"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
@@ -187,7 +187,7 @@ export default function Explore() {
             <Card className="relative mx-auto w-full max-w-sm pt-0">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
-                src="/mri3.png"
+                src="/explore-assets/images/info/info2.png"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
@@ -203,7 +203,7 @@ export default function Explore() {
             <Card className="relative mx-auto w-full max-w-sm pt-0">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
-                src="/mri4.png"
+                src="/explore-assets/images/info/info3.jpg"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
