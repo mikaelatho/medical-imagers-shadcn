@@ -52,13 +52,13 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{position: "relative", width: "100%", height: "75%" , borderWidth: "10px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}}>
-          <div ref={viewerRef} />
-                      <Button 
-                variant="explore" 
-                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
-                style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
-                  Back to Default View
+          <div style={{position: "relative", width: "100%", height: "75%" , borderWidth: "30px", borderStyle: "solid", borderColor: "black", borderRadius:"10px"}}>
+            <div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
+            <Button 
+              variant="explore" 
+              onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
+                Back to Default View
             </Button>
           </div>
 
