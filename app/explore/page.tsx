@@ -13,18 +13,18 @@ export default function Explore() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
-      <div className="text-left">
+      <div style={{marginRight: "40%"}}>
         
         {/* ----------HEADER---------- */}
         
-<div>
+      <div>
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5 text-left">
             Explore Brain MRI Visualizations
           </h1>
           <p className="text-wrap break-words sm:text-pretty">
             In the following sections, you can view, interact with, and discover more about MRIs.
           </p>
-</div>
+        </div>
 
         {/* ----------SUBTITLE---------- */}
         <div className="flex gap-4">
@@ -42,7 +42,7 @@ export default function Explore() {
           <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.15)}>Low Contrast</Button>
           <br/>
         </div>
-      </div>
+    </div>
 
       <div
         id="float-container"
