@@ -18,6 +18,7 @@ export default function Explore() {
         {/* ----------HEADER---------- */}
         
       <div>
+        <br/> <br/>
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5 text-left">
             Explore Brain MRI Visualizations
           </h1>
@@ -67,17 +68,17 @@ export default function Explore() {
           <img
             src={"/explore-assets/images/CoronalAnterior_Slice.png"}
             alt="Coronal Anterior Slice"
-            style={{ width: "370px", height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={"/explore-assets/images/LeftSagittal_Slice.png"}
             alt="Left Sagittal Slice"
-            style={{ width: "370px", height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={"/explore-assets/images/UpperAxial_Slice.png"}
             alt="Upper Axial Slice"
-            style={{ width: "370px" ,height: "185px", borderLeft: "85px", borderRight: "85px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
         </div>
         </div>
