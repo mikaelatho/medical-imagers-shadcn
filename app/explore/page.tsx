@@ -66,17 +66,17 @@ export default function Explore() {
 
           <div className="flex gap-4" style={{paddingTop: "5px"}}>
           <img
-            src={"/explore-assets/images/CoronalAnterior_Slice.png"}
+            src={"/explore-assets/images/standard/CoronalAnterior_Slice.png"}
             alt="Coronal Anterior Slice"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/LeftSagittal_Slice.png"}
+            src={"/explore-assets/images/standard/LeftSagittal_Slice.png"}
             alt="Left Sagittal Slice"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/UpperAxial_Slice.png"}
+            src={"/explore-assets/images/standard/UpperAxial_Slice.png"}
             alt="Upper Axial Slice"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />

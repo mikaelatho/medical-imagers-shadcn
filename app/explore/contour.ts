@@ -1,35 +1,52 @@
-export type Contour = "default" | "gbm" | "glioma" | "meta";
+let imgBtn: HTMLButtonElement = document.getElementById("imgBtn") as HTMLButtonElement;
+let contourAnt: HTMLImageElement = document.getElementById("contourAnterior") as HTMLImageElement;
+let contourSag: HTMLImageElement = document.getElementById("contourSagittal") as HTMLImageElement;
+let contourAx: HTMLImageElement = document.getElementById("contourAxial") as HTMLImageElement;
 
-export type ContourViews = {
-    anterior: string;
-    sagittal: string;
-    slice: string;
-};
+let standardAnterior = "/explore-assets/models/standard/CoronalAnterior_Slice.png";
+let standardSagittal = "/explore-assets/models/standard/LeftSagittal_Slice.png";
+let standardAxial = "/explore-assets/models/standard/UpperAxial_Slice.png"; 
 
-const ContourPaths: Record<Contour, ContourViews> = {
-  default: {
-    anterior: "/explore-assets/images/CoronalAnterior_Slice.png",
-    sagittal: "/explore-assets/images/LeftSagittal_Slice.png",
-    slice: "/explore-assets/images/UpperAxial_Slice.png",
-  },
-  gbm: {
-    anterior: "/explore-assets/images/gbm/Glioblastoma_Anterior_Slice.png",
-    sagittal: "/explore-assets/images/gbm/Glioblastoma_Sagittal_Slice.png",
-    slice: "/explore-assets/images/gbm/Glioblastoma_Axial_Slice.png",
-  },
-  glioma: {
-    anterior: "/explore-assets/images/glioma/Glioma_Anterior_Slice.png",
-    sagittal: "/explore-assets/images/glioma/Glioma_Sagittal_Slice.png",
-    slice: "/explore-assets/images/glioma/Glioma_Axial_Slice.png",
-  },
-  meta: {
-    anterior: "/explore-assets/images/meta/Glioma_Anterior_Slice.png",
-    sagittal: "/explore-assets/images/meta/Glioma_Sagittal_Slice.png",
-    slice: "/explore-assets/images/meta/Glioma_Axial_Slice.png",
-  },
-};
+let gbmAnterior = "/explore-assets/models/gbm/CoronalAnterior_Slice.png";
+let gbmSagittal = "/explore-assets/models/gbm/LeftSagittal_Slice.png";
+let gbmAxial =  "/explore-assets/models/gbm/UpperAxial_Slice.png";
 
+let gliomaAnterior = "/explore-assets/models/glioma/CoronalAnterior_Slice.png";
+let gliomaSagittal = "/explore-assets/models/glioma/LeftSagittal_Slice.png";
+let gliomaAxial =  "/explore-assets/models/glioma/UpperAxial_Slice.png";  
 
-export function getContourImages(toggle: Contour): ContourViews{
-  return ContourPaths[toggle] ?? ContourPaths.default;
-}
+let metaAnterior = "/explore-assets/models/metastasis/CoronalAnterior_Slice.png";
+let metaSagittal = "/explore-assets/models/metastasis/LeftSagittal_Slice.png";
+let metaAxial = "/explore-assets/models/metastasis/UpperAxial_Slice.png";  
+
+imgBtn.addEventListener("click", function(event) {
+
+  if(this.innerHTML === "Standard") {
+    contourAnt.setAttribute("src", standardAnterior);
+    contourSag.setAttribute("src", standardSagittal);
+    contourAx.setAttribute("src", standardAxial);
+    this.innerHTML = "GBM";
+  } 
+  
+  else if(this.innerHTML === "GBM") {
+    contourAnt.setAttribute("src", gbmAnterior);
+    contourSag.setAttribute("src", gbmSagittal);
+    contourAx.setAttribute("src", gbmAxial);
+    this.innerHTML = "Glioma";
+  } 
+  
+  else if(this.innerHTML === "Glioma") {    
+    contourAnt.setAttribute("src", gliomaAnterior);
+    contourSag.setAttribute("src", gliomaSagittal);
+    contourAx.setAttribute("src", gliomaAxial);
+    this.innerHTML = "Metastasis";
+  } 
+  
+  else if(this.innerHTML === "Metastasis") {
+    contourAnt.setAttribute("src", metaAnterior);
+    contourSag.setAttribute("src", metaSagittal);
+    contourAx.setAttribute("src", metaAxial);  
+    this.innerHTML = "Standard";    
+  }
+
+});
