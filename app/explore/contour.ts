@@ -21,7 +21,15 @@ let metaAxial = "/explore-assets/models/metastasis/UpperAxial_Slice.png";
 
 imgBtn.addEventListener("click", function(event) {
 
-  if(this.innerHTML === "Standard" || this.innerHTML === "Back to Default View") {
+  if(
+      this.innerHTML === "Standard" || 
+      this.innerHTML === "Back to Default View" || 
+      this.innerHTML === "Frontal Lobe" || 
+      this.innerHTML === "Parietal Lobe" || 
+      this.innerHTML === "Occipital Lobe" || 
+      this.innerHTML === "Temporal Lobe" || 
+      this.innerHTML === "Cerebellum" || 
+      this.innerHTML === "Spinal Cord") {
     contourAnt.setAttribute("src", standardAnterior);
     contourSag.setAttribute("src", standardSagittal);
     contourAx.setAttribute("src", standardAxial);
