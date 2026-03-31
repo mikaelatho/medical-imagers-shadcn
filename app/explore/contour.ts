@@ -21,14 +21,14 @@ let metaAxial = "/explore-assets/models/metastasis/UpperAxial_Slice.png";
 
 imgBtn.addEventListener("click", function(event) {
 
-  if(this.innerHTML === "Standard") {
+  if(this.innerHTML === "Standard" || this.innerHTML === "Back to Default View") {
     contourAnt.setAttribute("src", standardAnterior);
     contourSag.setAttribute("src", standardSagittal);
     contourAx.setAttribute("src", standardAxial);
     this.innerHTML = "GBM";
   } 
   
-  else if(this.innerHTML === "GBM") {
+  else if(this.innerHTML === "Glioblastoma") {
     contourAnt.setAttribute("src", gbmAnterior);
     contourSag.setAttribute("src", gbmSagittal);
     contourAx.setAttribute("src", gbmAxial);
@@ -42,7 +42,7 @@ imgBtn.addEventListener("click", function(event) {
     this.innerHTML = "Metastasis";
   } 
   
-  else if(this.innerHTML === "Metastasis") {
+  else if(this.innerHTML === "Metastasic Disease") {
     contourAnt.setAttribute("src", metaAnterior);
     contourSag.setAttribute("src", metaSagittal);
     contourAx.setAttribute("src", metaAxial);  
