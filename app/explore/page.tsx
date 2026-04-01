@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect} from "react";
 import { navigator } from "./navigator";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
@@ -8,12 +7,8 @@ import { contour } from "./contour";
 import Link from "next/link";
 
 export default function Explore() {
-
   const { viewerRef, loadModel, setOpacity } = navigator();
-
-useEffect(() => {
-    contour();
-  }, []);
+  const {contourImages, updateContourImages} = contour();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
@@ -62,8 +57,7 @@ useEffect(() => {
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button 
               variant="explore" 
-              id = "imgBtn"
-              onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
               style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
                 Back to Default View
             </Button>
@@ -71,21 +65,18 @@ useEffect(() => {
 
           <div className="flex gap-4" style={{paddingTop: "5px"}}>
           <img
-            src={"/explore-assets/images/default/CoronalAnterior_Slice.png"}
+            src={contourImages.anterior}
             alt="Coronal Anterior Slice"
-            id = "contourAnterior"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/default/LeftSagittal_Slice.png"}
+            src={contourImages.sagittal}
             alt="Left Sagittal Slice"
-            id = "contourSagittal"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/default/UpperAxial_Slice.png"}
+            src={contourImages.axial}
             alt="Upper Axial Slice"
-            id = "contourAxial"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
         </div>
@@ -104,48 +95,42 @@ useEffect(() => {
 
             <Button 
                 variant="explore" 
-                 id = "imgBtn"
-                onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+                onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
                 style={{marginBottom: "5%"}}>
                   Frontal Lobe
             </Button>
 
             <Button 
               variant="explore"
-               id = "imgBtn"
-               onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Parietal Lobe
             </Button>
 
             <Button 
               variant="explore"
-               id = "imgBtn"
-               onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Occipital Lobe
               </Button>
 
             <Button 
               variant="explore"
-               id = "imgBtn"
-               onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Temporal Lobe
             </Button>
             
             <Button 
               variant="explore"
-               id = "imgBtn"
-               onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Cerebellum
               </Button>
             
             <Button 
             variant="explore"
-             id = "imgBtn"
-             onClick={() => loadModel("/explore-assets/models/standard/standard_scene.gltf")}
+            onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
             style={{marginBottom: "5%"}}>
               Spinal Cord
             </Button>
@@ -157,8 +142,7 @@ useEffect(() => {
 
             <Button 
               variant="explore" 
-               id = "imgBtn"
-              onClick={() => loadModel("/explore-assets/models/glioblastoma/glioblastoma.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/glioblastoma/glioblastoma.gltf"); updateContourImages("glioblastoma"); }}
               style={{marginBottom: "5%"}}
               >
               Glioblastoma
@@ -166,16 +150,14 @@ useEffect(() => {
 
             <Button 
               variant="explore"
-               id = "imgBtn"
-              onClick={() => loadModel("/explore-assets/models/glioma2/glioma2.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/glioma2/glioma2.gltf"); updateContourImages("glioma"); }}
               style={{marginBottom: "5%"}}>
                 Glioma
             </Button>
 
             <Button 
               variant="explore"
-               id = "imgBtn"
-              onClick={() => loadModel("/explore-assets/models/meta2/meta2.gltf")}
+              onClick={() => { loadModel("/explore-assets/models/meta2/meta2.gltf"); updateContourImages("metastatic"); }}
               style={{marginBottom: "5%"}}>
                 Metastatic Disease
             </Button>
