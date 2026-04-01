@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
-  const {contourImages, updateContourImages} = contour();
+  const {contourImages, setContourImages} = contour();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
@@ -57,7 +57,7 @@ export default function Explore() {
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button 
               variant="explore" 
-              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
               style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
                 Back to Default View
             </Button>
@@ -95,42 +95,42 @@ export default function Explore() {
 
             <Button 
                 variant="explore" 
-                onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+                onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
                 style={{marginBottom: "5%"}}>
                   Frontal Lobe
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Parietal Lobe
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Occipital Lobe
               </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Temporal Lobe
             </Button>
             
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+              onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
               style={{marginBottom: "5%"}}>
                 Cerebellum
               </Button>
             
             <Button 
             variant="explore"
-            onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); updateContourImages("standard"); }}
+            onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
             style={{marginBottom: "5%"}}>
               Spinal Cord
             </Button>
@@ -142,7 +142,7 @@ export default function Explore() {
 
             <Button 
               variant="explore" 
-              onClick={() => { loadModel("/explore-assets/models/glioblastoma/glioblastoma.gltf"); updateContourImages("glioblastoma"); }}
+              onClick={() => { loadModel("/explore-assets/models/glioblastoma/glioblastoma.gltf"); setContourImages("glioblastoma"); }}
               style={{marginBottom: "5%"}}
               >
               Glioblastoma
@@ -150,14 +150,14 @@ export default function Explore() {
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/glioma2/glioma2.gltf"); updateContourImages("glioma"); }}
+              onClick={() => { loadModel("/explore-assets/models/glioma2/glioma2.gltf"); setContourImages("glioma"); }}
               style={{marginBottom: "5%"}}>
                 Glioma
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel("/explore-assets/models/meta2/meta2.gltf"); updateContourImages("metastatic"); }}
+              onClick={() => { loadModel("/explore-assets/models/meta2/meta2.gltf"); setContourImages("metastatic"); }}
               style={{marginBottom: "5%"}}>
                 Metastatic Disease
             </Button>

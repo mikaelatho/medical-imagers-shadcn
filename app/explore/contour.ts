@@ -33,13 +33,15 @@ const contour: ViewDictionary = {
   },
 };
 
-  const [contourImages, setContourImages] = useState(contour.standard);
+//defaults
+  const [contourImages, getContourImages] = useState(contour.standard);
 
-  const updateContourImages = (type: keyof typeof contour) => {
-    setContourImages(contour[type]);
+  //getters and setters
+  const setContourImages = (type: keyof typeof contour) => {
+    getContourImages(contour[type]);
   };
 
-  return{contourImages, updateContourImages};
+  return{contourImages, setContourImages};
 
 };
 
