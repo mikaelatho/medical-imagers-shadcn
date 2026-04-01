@@ -1,19 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect} from "react";
 import { navigator } from "./navigator";
-// import { contour } from "./contour";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
+import { contour } from "./contour";
 import Link from "next/link";
 
 export default function Explore() {
 
   const { viewerRef, loadModel, setOpacity } = navigator();
 
+useEffect(() => {
+    contour();
+  }, []);
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
-      <div style={{marginRight: "40%"}}>
+      <div style={{marginRight: "43%"}}>
         
         {/* ----------HEADER---------- */}
         
@@ -67,19 +71,19 @@ export default function Explore() {
 
           <div className="flex gap-4" style={{paddingTop: "5px"}}>
           <img
-            src={"/explore-assets/images/standard/CoronalAnterior_Slice.png"}
+            src={"/explore-assets/images/default/CoronalAnterior_Slice.png"}
             alt="Coronal Anterior Slice"
             id = "contourAnterior"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/standard/LeftSagittal_Slice.png"}
+            src={"/explore-assets/images/default/LeftSagittal_Slice.png"}
             alt="Left Sagittal Slice"
             id = "contourSagittal"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
-            src={"/explore-assets/images/standard/UpperAxial_Slice.png"}
+            src={"/explore-assets/images/default/UpperAxial_Slice.png"}
             alt="Upper Axial Slice"
             id = "contourAxial"
             style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
