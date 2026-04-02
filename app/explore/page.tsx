@@ -10,6 +10,11 @@ export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
   const { contourImages, setContourImages } = contour();
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-start mx-auto px-6 sm:px-20 py-10" style={{ scrollBehavior: "smooth" }}>
       <div style={{ marginRight: "43%" }}>
@@ -65,17 +70,20 @@ export default function Explore() {
 
           <div className="flex gap-4" style={{ paddingTop: "5px" }}>
             <img
-              src={contourImages.anterior}
+              // src={contourImages.anterior}
+              src={`${basePath}/contourImages.anterior`}
               alt="Coronal Anterior Slice"
               style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
             <img
-              src={contourImages.sagittal}
+              // src={contourImages.sagittal} 
+              src={`${basePath}/contourImages.sagittal`}
               alt="Left Sagittal Slice"
               style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
             <img
-              src={contourImages.axial}
+              // src={contourImages.axial}
+              src={`${basePath}/contourImages.axial`}
               alt="Upper Axial Slice"
               style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
@@ -174,51 +182,51 @@ export default function Explore() {
           <br /><br />
           Want to learn more?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
           <div>
             {/* ----------CARD 1---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative w-full max-w-sm pt-0 flex flex-col items-center">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src="/explore-assets/images/info/info1.jpg"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4632105/">
-                  <Button className="w-full">Advanced MRI Imaging</Button>
+                  <Button>Advanced MRI Imaging</Button>
                 </Link>
               </CardFooter>
             </Card>
           </div>
           <div>
             {/* ----------CARD 2---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative w-full max-w-sm pt-0 flex flex-col items-center">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src="/explore-assets/images/info/info2.png"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://www.cancerimagingarchive.net/browse-collections/">
-                  <Button className="w-full">Data Sources</Button>
+                  <Button>Data Sources</Button>
                 </Link>
               </CardFooter>
             </Card>
           </div>
           <div>
             {/* ----------CARD 3---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative w-full max-w-sm pt-0 flex flex-col items-center">
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src="/explore-assets/images/info/info3.jpg"
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="../games/page.tsx">
-                  <Button className="w-full">Check your Knowledge</Button>
+                  <Button>Check your Knowledge</Button>
                 </Link>
               </CardFooter>
             </Card>
@@ -230,7 +238,7 @@ export default function Explore() {
 
       <div style={{ marginLeft: "15%" }} id="explore">
         <br /><br /><br />
-        <h2 className="text-left text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
+        <h2 className="text-center text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           How to Use the Interactive Viewer
         </h2>
 
