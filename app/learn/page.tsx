@@ -3,6 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+
 
 export default function LearnPage() {
   return (
@@ -23,7 +28,7 @@ export default function LearnPage() {
           <div className="flex justify-center md:justify-end">
             <div className="w-full max-w-xl overflow-hidden rounded-md">
               <Image
-                src="/learn1.gif"
+                src={`${basePath}/learn1.gif`}
                 alt="MRI scan"
                 width={530}
                 height={545}
@@ -175,7 +180,7 @@ export default function LearnPage() {
               <CardHeader className="text-center">
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-lg">
                   <Image
-                    src={c.img}
+                    src={`${basePath}${c.img}`}
                     alt={c.title}
                     width={800}
                     height={500}
@@ -219,7 +224,7 @@ export default function LearnPage() {
             </div>
             <div className="flex-1 flex justify-center">
               <Image
-                src="/learn5.png"
+                src={`${basePath}/learn5.png`}
                 alt="Brain anatomy labeled diagram"
                 width={900}
                 height={600}
