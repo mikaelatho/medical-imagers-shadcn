@@ -14,6 +14,11 @@ import { Field } from "@/components/ui/field";
 import { FieldLabel } from "@/components/ui/field";
 import Link from "next/link";
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+
 // below is the page contents
 export default function Games() {
   return (
@@ -33,7 +38,7 @@ export default function Games() {
           </div>
           <div className="py-5">
             <div className="outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-2 py-2">
-              <img src="/mri8.png" alt="MRI Diagnostic Trainer" className="inline-block align-middle w-full sm:max-w-7xl"></img>
+              <img src={`${basePath}/mri8.png`} alt="MRI Diagnostic Trainer" className="inline-block align-middle w-full sm:max-w-7xl"></img>
             </div>
           </div>
         </div>
