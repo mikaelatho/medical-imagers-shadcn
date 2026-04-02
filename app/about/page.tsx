@@ -24,7 +24,11 @@ import {
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 
-
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+    
 // below is the page contents
 export default function About() {
   return (
@@ -47,13 +51,13 @@ export default function About() {
           {/* meet the team */}
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">About</h1>
           <p className="font-inter text-slate-800 py-5 max-w-7xl">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
-          <h3 className="text-left text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Meet the Team</h3>
+          <h3 className="text-center text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Meet the Team</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 py-8">
             <div>
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/ren.png"
+                  src={`${basePath}/ren.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -72,7 +76,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/linh.png"
+                  src={`${basePath}/linh.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -91,7 +95,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/jasmine.png"
+                  src={`${basePath}/jasmine.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -110,7 +114,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/mika.png"
+                  src={`${basePath}/mika.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -129,7 +133,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/elijah.png"
+                  src={`${basePath}/elijah.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -148,7 +152,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/anderson.png"
+                  src={`${basePath}/anderson.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -167,7 +171,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/kimberly.png"
+                  src={`${basePath}/kimberly.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -186,7 +190,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/kaylee.png"
+                  src={`${basePath}/kaylee.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -205,7 +209,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/ethan.png"
+                  src={`${basePath}/ethan.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -224,7 +228,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/macy.png"
+                  src={`${basePath}/macy.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -243,7 +247,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/erika.png"
+                  src={`${basePath}/erika.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -262,7 +266,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/vito.png"
+                  src={`${basePath}/vito.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -281,7 +285,7 @@ export default function About() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/alex.png"
+                  src={`${basePath}/alex.png`}
                   alt="Profile photo"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />

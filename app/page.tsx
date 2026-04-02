@@ -21,6 +21,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+
 // below is start of the home page
 export default function Home() {
   return (
@@ -58,7 +63,7 @@ export default function Home() {
             <p className="font-inter text-slate-600 text-sm my-2">MRI games | Interactive brain viewer | Brain anatomy explanation</p>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src="/mri_home.png" alt="MRI Visualization" className="w-sm sm:w-full max-w-md h-auto object-contain"></img>
+            <img src={`${basePath}/mri_home.png`} alt="MRI Visualization" className="w-sm sm:w-full max-w-md h-auto object-contain"></img>
           </div>
         </div>
 
@@ -70,7 +75,7 @@ export default function Home() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/mri2.png"
+                  src={`${basePath}/mri2.png`}
                   alt="6-sided MRI visualization"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
@@ -84,7 +89,7 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button className="w-full">Explore Now</Button>
+                  <Button className="w-full"><Link href="/explore">Explore Now</Link></Button>
                 </CardFooter>
               </Card>
             </div>
@@ -92,7 +97,7 @@ export default function Home() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/mri3.png"
+                  src={`${basePath}/mri3.png`}
                   alt="6-sided MRI visualization"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover  brightness-80 dark:brightness-40"
                 />
@@ -114,8 +119,7 @@ export default function Home() {
               <Card className="relative mx-auto w-full max-w-sm pt-0">
                 <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
                 <img
-                  src="/mri4.png"
-                  alt="6-sided MRI visualization"
+                  src={`${basePath}/mri4.png`} alt="6-sided MRI visualization"
                   className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
                 />
                 <CardHeader>
