@@ -63,14 +63,14 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/learn">Learn</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/learn" title="Learn stuff">
-                    A description of the learn section
+                  <ListItem href="/learn" title="How do MRIs work?">
+                    Learn the technology behind MRIs.
                   </ListItem>
-                  <ListItem href="/learn" title="Learn stuff">
-                    A description of the learn section
+                  <ListItem href="/learn" title="Compare Imaging Techniques">
+                    Learn how MRI compares to CT and X-Ray.
                   </ListItem>
-                  <ListItem href="/learn" title="Learn stuff">
-                    A description of the learn section
+                  <ListItem href="/learn" title="MRI Terminology">
+                    Identify key MRI terminology through our glossary.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -79,8 +79,8 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/games">Games</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/games" title="Header title">
-                    A description of the this section
+                  <ListItem href="/games" title="Play now">
+                    Explore our MRI Diagnostic Trainer simulation game and progress.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -99,8 +99,11 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/about">About</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/about" title="Header title">
-                    A description of the this section
+                  <ListItem href="/about" title="Meet the Team">
+                    An overview of the team behind LearnMRI.
+                  </ListItem>
+                  <ListItem href="/about" title="Data Sources">
+                    Review the medical literature backing LearnMRI.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -118,7 +121,7 @@ export function Nav() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-              <SheetTitle className="text-left font-inter font-bold">Navigation</SheetTitle>
+              <SheetTitle className="text-left font-inter font-bold text-blue-600">LearnMRI</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col gap-4 mt-8 mx-6">
               {/* Mobile Links */}
