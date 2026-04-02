@@ -132,7 +132,7 @@ export default function Explore() {
             variant="explore"
             onClick={() => { loadModel("/explore-assets/models/standard/standard_scene.gltf"); setContourImages("standard"); }}
             style={{marginBottom: "5%"}}>
-              Spinal Cord
+              Brain Stem
             </Button>
 
             <br />
@@ -288,7 +288,7 @@ export default function Explore() {
         </h3>
         <p>
           Once you're comfortable, start recognizing major sections of the brain: the frontal lobe, parietal lobe, occipital
-          lobe, temporal lobe, cerebellum, and spinal cord. The buttons in the interactive viewer can help you here.
+          lobe, temporal lobe, cerebellum, and brain stem. The buttons in the interactive viewer can help you here.
         </p>
         <br />
         </div>
