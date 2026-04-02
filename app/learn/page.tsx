@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link";
 
 const basePath =
   process.env.NODE_ENV === "production"
@@ -13,10 +15,10 @@ export default function LearnPage() {
   return (
     <div className="w-full">
       {/* front */}
-      <section className="px-6 md:px-20 py-16">
+      <section className="px-6 sm:px-20 py-16 items-center justify-center mx-auto max-w-7xl flex-auto min-h-screen">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="text-center md:text-left">
-            <h1 className="font-source-serif-4 font-bold text-[48px] leading-[48px] tracking-[-0.012em] text-[#002BB3]">
+            <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">
               Learn MRI
             </h1>
 
@@ -145,7 +147,7 @@ export default function LearnPage() {
                 "Uses radiation",
                 "Limited soft tissue detail compared to MRI",
               ],
-              color: "bg-[#AFC3FF] hover:bg-[#9FB7FF]",
+              color: "bg-blue-400 hover:cursor-default hover:bg-blue-500",
             },
             {
               title: "X Ray",
@@ -159,7 +161,7 @@ export default function LearnPage() {
                 "Very fast scanning time",
                 "Cannot show soft tissues clearly",
               ],
-              color: "bg-[#8EAAFF] hover:bg-[#7C9CFF]",
+              color: "bg-blue-500 hover:cursor-default hover:bg-blue-600",
             },
             {
               title: "MRI",
@@ -173,7 +175,7 @@ export default function LearnPage() {
                 "Takes longer than CT or X-ray",
                 "Can be noisy and uncomfortable",
               ],
-              color: "bg-[#004FF1] hover:bg-[#0046E7]",
+              color: "bg-blue-700 hover:cursor-default hover:bg-blue-800",
             },
           ].map((c) => (
             <Card key={c.title} className="overflow-hidden border border-[#CBD5E1] rounded-xl shadow-none">
@@ -208,8 +210,8 @@ export default function LearnPage() {
           ))}
         </div>
         <div className="mt-10 flex justify-center">
-          <Button className="bg-[#BCCFFF] hover:bg-[#AFC3FF] text-white px-8">
-            Link to Video
+          <Button variant="outline" className="px-8"><Link href="https://www.youtube.com/watch?v=F0ilx92F9TI">
+            Link to Video</Link>
           </Button>
         </div>
       </section>

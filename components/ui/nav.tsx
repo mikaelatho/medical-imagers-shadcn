@@ -89,8 +89,8 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/explore">Explore</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/explore" title="Header title">
-                    A description of the this section
+                  <ListItem href="/explore" title="Explore MRI">
+                    Explore data with our interactive MRI viewer.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
