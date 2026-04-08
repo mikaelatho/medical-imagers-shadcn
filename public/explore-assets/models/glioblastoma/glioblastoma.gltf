@@ -19,10 +19,16 @@
 		{
 			"mesh":0,
 			"name":"GBM",
+			"rotation":[
+				0.70710688829422,
+				0,
+				0,
+				0.7071066498756409
+			],
 			"scale":[
-				0.05000000074505806,
-				0.05000000074505806,
-				0.05000000074505806
+				0.009999999776482582,
+				0.010000000707805157,
+				0.010000000707805157
 			]
 		}
 	],
@@ -31,17 +37,15 @@
 			"doubleSided":true,
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularFactor":0
+					"specularColorFactor":[
+						0.0,
+						0.0,
+						0.0
+					]
 				}
 			},
 			"name":"GBM",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.800000011920929,
-					0.800000011920929,
-					0.800000011920929,
-					1
-				],
 				"metallicFactor":0
 			}
 		}
@@ -53,9 +57,10 @@
 				{
 					"attributes":{
 						"POSITION":0,
-						"NORMAL":1
+						"NORMAL":1,
+						"COLOR_0":2
 					},
-					"indices":2,
+					"indices":3,
 					"material":0
 				}
 			]
@@ -65,27 +70,33 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":954689,
+			"count":954730,
 			"max":[
-				68.99423217773438,
-				58.73112487792969,
-				82.66477966308594
+				344.9711608886719,
+				413.32391357421875,
+				292.5377197265625
 			],
 			"min":[
-				-65.14427185058594,
-				-58.507537841796875,
-				-77.6318359375
+				-325.72137451171875,
+				-388.1592102050781,
+				-293.6556396484375
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":954689,
+			"count":954730,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
+			"componentType":5126,
+			"count":954730,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":3,
 			"componentType":5125,
 			"count":5723259,
 			"type":"SCALAR"
@@ -94,26 +105,32 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":11456268,
+			"byteLength":11456760,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":11456268,
-			"byteOffset":11456268,
+			"byteLength":11456760,
+			"byteOffset":11456760,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":11456760,
+			"byteOffset":22913520,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":22893036,
-			"byteOffset":22912536,
+			"byteOffset":34370280,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":45805572,
+			"byteLength":57263316,
 			"uri":"glioblastoma.bin"
 		}
 	]
