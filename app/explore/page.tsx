@@ -32,7 +32,7 @@ export default function Explore() {
           <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
             Interactive MRI Viewer
           </h2>
-          <Button variant="explore" style={{marginBottom: "5%", marginTop: "22px"}} onClick={() => window.location.href="#explore"}>Exploration Guide</Button>
+          <Button variant="explore" style={{marginBottom: "5%", marginTop: "22px"}} onClick={() => document.getElementById('explore')?.scrollIntoView({behavior: 'smooth'})}>Exploration Guide</Button>
           <p></p>
         </div>
 
@@ -178,7 +178,7 @@ export default function Explore() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div>
             {/* ----------CARD 1---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info1.jpg`}
@@ -194,7 +194,7 @@ export default function Explore() {
           </div>
           <div>
             {/* ----------CARD 2---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info2.png`}
@@ -210,7 +210,7 @@ export default function Explore() {
           </div>
           <div>
             {/* ----------CARD 3---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info3.jpg`}
