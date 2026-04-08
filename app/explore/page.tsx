@@ -12,7 +12,7 @@ export default function Explore() {
   const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start" style={{scrollBehavior: "smooth"}}>
+    <main className="min-h-screen flex flex-col items-center justify-start px-1.5 sm:px-5" style={{scrollBehavior: "smooth"}}>
       <div style={{marginRight: "43%"}}>
         
         {/* ----------HEADER---------- */}
@@ -54,7 +54,7 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{position: "relative", width: "100%", height: "75%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
+          <div style={{position: "relative", width: "100%", height: "74%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button 
               variant="explore" 
@@ -64,21 +64,21 @@ export default function Explore() {
             </Button>
           </div>
 
-          <div className="flex gap-4" style={{paddingTop: "5px"}}>
+          <div className="flex gap-4" style={{paddingTop: "15px"}}>
           <img
             src={contourImages.anterior}
             alt="Coronal Anterior Slice"
-            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={contourImages.sagittal}
             alt="Left Sagittal Slice"
-            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
           <img
             src={contourImages.axial}
             alt="Upper Axial Slice"
-            style={{ width: "370px", height: "185px", borderLeft: "100px", borderRight: "100px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
+            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
           />
         </div>
         </div>
@@ -86,7 +86,7 @@ export default function Explore() {
         {/* ----------BUTTON CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "1", borderWidth: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
+          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
         >
     
           <div id="right">
