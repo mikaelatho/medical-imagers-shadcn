@@ -28,7 +28,23 @@ const basePath =
   process.env.NODE_ENV === "production"
     ? "/medical-imagers-shadcn"
     : "";
-    
+
+const teamMembers = [
+  { name: "Ren", role: "Data Vis", img: "RenLagman.jpg" },
+  { name: "Linh", role: "UX Design", img: "LinhPham.png" },
+  { name: "Jasmine", role: "UX Design", img: "JasmineBui.jpg" },
+  { name: "Mikaela", role: "Web Dev", img: "MikaelaThompson.png" },
+  { name: "Elijah", role: "Game Dev", img: "elijah.png" },
+  { name: "Anderson", role: "UX Design", img: "Anderson Tsan.jpg" },
+  { name: "Kimberly", role: "UX Design", img: "kimberly.png" },
+  { name: "Kaylee", role: "UX Design", img: "KayleeYoung.jpg" },
+  { name: "Ethan", role: "Game Dev", img: "Ethan Baxter.png" },
+  { name: "Macy", role: "UX Design", img: "MacyBosworth.jpg" },
+  { name: "Erika", role: "UX Design", img: "ErikaShin.jpg" },
+  { name: "Vito", role: "Web Dev", img: "vito.png" },
+  { name: "Alex", role: "Game Dev", img: "alex.png" },
+];
+
 // below is the page contents
 export default function About() {
   return (
@@ -48,261 +64,35 @@ export default function About() {
       </div>
       <div className="items-center justify-center mx-auto max-w-7xl flex-auto min-h-screen">
         <div className="px-6 sm:px-20 py-20">
-          {/* meet the team */}
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">About</h1>
           <p className="font-inter text-slate-800 py-5 max-w-7xl">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
           <h3 className="text-center text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Meet the Team</h3>
+          
+          {/* meet the team */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 py-8">
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/ren.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle className="">Ren</CardTitle>
-                  <CardDescription>
-                    Data Vis
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/linh.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Linh</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/jasmine.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Jasmine</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/mika.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Mikaela</CardTitle>
-                  <CardDescription>
-                    Web Dev
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/elijah.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Elijah</CardTitle>
-                  <CardDescription>
-                    Game Dev
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/anderson.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Anderson</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/kimberly.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Kimberly</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/kaylee.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Kaylee</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/ethan.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Ethan</CardTitle>
-                  <CardDescription>
-                    Game Dev
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/macy.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Macy</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/erika.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Erika</CardTitle>
-                  <CardDescription>
-                    UX Design
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/vito.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Vito</CardTitle>
-                  <CardDescription>
-                    Web Dev
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div>
-              <Card className="relative mx-auto w-full max-w-sm pt-0">
-                <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
-                <img
-                  src={`${basePath}/alex.png`}
-                  alt="Profile photo"
-                  className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
-                />
-                <CardHeader>
-                  <CardAction>
-                  </CardAction>
-                  <CardTitle>Alex</CardTitle>
-                  <CardDescription>
-                    Game Dev
-                    <Button variant="link" asChild><Link href="">Portfolio</Link></Button>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
+            {teamMembers.map((member) => (
+              <div key={member.name}>
+                <Card className="relative mx-auto w-full max-w-sm pt-0 overflow-hidden">
+                  <div className="rounded-t-lg absolute inset-0 z-30 aspect-[3/4] bg-black/5" />
+                  <img
+                    src={`${basePath}/${member.img}`}
+                    alt={`${member.name} profile photo`}
+                    className="rounded-t-lg relative z-20 aspect-[3/4] w-full object-cover object-top brightness-100 dark:brightness-40"
+                  />
+                  <CardHeader className="p-3">
+                    <CardAction />
+                    <CardTitle className="text-center text-base leading-tight">
+                      {member.name}
+                    </CardTitle>
+                    <CardDescription className="text-center text-xs mt-1">
+                      {member.role}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
       <div className="px-6 sm:px-20 lg:px-40 py-20 bg-blue-50">
         <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Learning Objectives</h3>
