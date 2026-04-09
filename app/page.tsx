@@ -54,13 +54,7 @@ export default function Home() {
               <div>
                 <Button variant="default" asChild><Link href="/explore">Explore Data</Link></Button>
               </div>
-            </div>
-            {/* search bar */}
-            <Field orientation="horizontal" className="flex gap-2 max-w-lg">
-              <Input type="search" placeholder="E.g. Field of View, slice, T1-Weighted" />
-              <Button variant="outline" size="icon" aria-label="Search"><SearchIcon /></Button>
-            </Field>
-            <p className="font-inter text-slate-600 text-sm my-2">MRI games | Interactive brain viewer | Brain anatomy explanation</p>
+            </div>            
           </div>
           <div className="flex-1 flex justify-center">
             <img src={`${basePath}/mri_home.png`} alt="MRI Visualization" className="w-sm sm:w-full max-w-md h-auto object-contain"></img>
