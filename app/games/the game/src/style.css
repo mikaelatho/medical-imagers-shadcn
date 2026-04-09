@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  background-color: darkblue;
+  margin: 0;
+  padding: 0;
+}
+
+.image-container {
+    /* Important for absolute positioning of the text */
+    position: relative; 
+    /* Optional: set width/height or display: inline-block */
+    width: 400px;
+    height: 700px;
+}
+
+.image-text {
+    /* Hide the text by default */ 
+    /* Position the text over the image */
+    position: absolute; 
+    top: 0px;
+    left: 448px;
+    /* Optional styling */
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 75%;
+    height: 494px;
+    box-sizing: border-box;
+}
+
+.red-dot-1 {
+  position: absolute;
+  bottom: 400px;
+  left: 100px;
+}
+
+.red-dot-2 {
+  position: absolute;
+  bottom: 550px;
+  left: 200px;
+}
+
+.red-dot-3 {
+  position: absolute;
+  bottom: 350px;
+  left: 300px;
+}
+
+.left-button {
+  position: absolute;
+}
+
+.right-button {
+  position: absolute;
+  left: 55px;
+}
