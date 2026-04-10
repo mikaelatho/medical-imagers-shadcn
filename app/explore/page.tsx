@@ -11,6 +11,11 @@ export default function Explore() {
   const {contourImages, setContourImages} = contour();
   const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/medical-imagers-shadcn"
+    : "";
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-start px-1.5 sm:px-5" style={{scrollBehavior: "smooth"}}>
       <div style={{marginRight: "43%"}}>
@@ -175,7 +180,7 @@ export default function Explore() {
           <br/><br/>
           Want to learn more?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
           <div>
             {/* ----------CARD 1---------- */}
             <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
@@ -185,7 +190,7 @@ export default function Explore() {
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4632105/">
                 <Button className="w-full">Advanced MRI Imaging</Button>
                 </Link>
@@ -201,7 +206,7 @@ export default function Explore() {
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://www.cancerimagingarchive.net/browse-collections/">
                 <Button className="w-full">Data Sources</Button>
                 </Link>
@@ -217,7 +222,7 @@ export default function Explore() {
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="../games/page.tsx">
                 <Button className="w-full">Check your Knowledge</Button>
                 </Link>
