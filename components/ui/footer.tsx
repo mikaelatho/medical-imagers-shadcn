@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <div className="flex flex-col sm:flex-row w-full justify-between items-center bg-blue-900
-     p-8 pb-20 text-white gap-8 sm:px-25 font-inter">
+     p-8 pt-10 pb-30 text-white gap-8 sm:px-25 font-inter">
     {/* Left Side */}
     <div className="items-center text-center sm:text-left">
       <h3 className="scroll-m-20 text-xl font-bold">LearnMRI</h3>
