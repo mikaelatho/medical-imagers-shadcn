@@ -18,11 +18,17 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Meta_Brain3",
+			"name":"Meta_Brain4",
+			"rotation":[
+				0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
+			],
 			"scale":[
-				0.05000000074505806,
-				0.05000000074505806,
-				0.05000000074505806
+				0.009999999776482582,
+				0.009999999776482582,
+				0.009999999776482582
 			]
 		}
 	],
@@ -31,30 +37,30 @@
 			"doubleSided":true,
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularFactor":0
+					"specularColorFactor":[
+						0.0,
+						0.0,
+						0.0
+					]
 				}
 			},
-			"name":"Meta_Brain3",
+			"name":"Meta_Brain4",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.800000011920929,
-					0.800000011920929,
-					0.800000011920929,
-					1
-				],
 				"metallicFactor":0
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Meta_Brain3",
+			"name":"Meta_Brain4",
 			"primitives":[
 				{
 					"attributes":{
-						"POSITION":0
+						"POSITION":0,
+						"NORMAL":1,
+						"COLOR_0":2
 					},
-					"indices":1,
+					"indices":3,
 					"material":0
 				}
 			]
@@ -64,43 +70,67 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":2840185,
+			"count":1265405,
 			"max":[
-				69.90426635742188,
-				62.79383087158203,
-				89.303955078125
+				349.3174133300781,
+				446.47802734375,
+				354.8772277832031
 			],
 			"min":[
-				-68.97744750976562,
-				-71.01140594482422,
-				-76.605224609375
+				-344.8391418457031,
+				-382.5116882324219,
+				-314.1586608886719
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
+			"componentType":5126,
+			"count":1265405,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":2,
+			"componentType":5126,
+			"count":1265405,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":3,
 			"componentType":5125,
-			"count":17070720,
+			"count":7528869,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":34082220,
+			"byteLength":15184860,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":68282880,
-			"byteOffset":34082220,
+			"byteLength":15184860,
+			"byteOffset":15184860,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":15184860,
+			"byteOffset":30369720,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":30115476,
+			"byteOffset":45554580,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":102365100,
+			"byteLength":75670056,
 			"uri":"meta2.bin"
 		}
 	]

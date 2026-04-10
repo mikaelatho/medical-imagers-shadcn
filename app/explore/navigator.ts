@@ -2,10 +2,12 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { envProxy } from "next/dist/build/turborepo-access-trace/env";
 
 export function navigator() {
 
 // ------REFERENCES------
+  const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
   const viewerRef = useRef<HTMLDivElement | null>(null);
   const loadModelRef = useRef<((path: string) => void) | null>(null);
   const opacityRef = useRef<((opacity: number) => void) | null>(null);
@@ -26,10 +28,11 @@ export function navigator() {
 
     // ------SCENE------
     const scene = new THREE.Scene();
+  
 
     // ------CAMERA------
     const camera = new THREE.PerspectiveCamera(45, 1, 1, 1000);
-    camera.position.set(4, 5, 11);
+    camera.position.set(4, 3, 11);
 
     // ------CONTROLS------
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -45,12 +48,12 @@ export function navigator() {
     controls.target = new THREE.Vector3(0, 1, 0);
     controls.update();
 
-    // ------LIGHTS------
-    const spotLight = new THREE.SpotLight(0xffffff, 500, 100, 0.38, 1);
-    spotLight.position.set(0, 25, 0);
-    spotLight.castShadow = true;
-    spotLight.shadow.bias = -0.0001;
-    scene.add(spotLight);
+    //------LIGHTS------
+    // const spotLight = new THREE.SpotLight(0xffffff, 500, 100, 0.38, 1);
+    // spotLight.position.set(0, 25, 0);
+    // spotLight.castShadow = true;
+    // spotLight.shadow.bias = -0.0001;
+    // scene.add(spotLight);
 
     const leftLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
     leftLight.position.set(5, 5, 0);
@@ -133,7 +136,7 @@ export function navigator() {
     // ------ACCESSORS------
     opacityRef.current = setOpacity;
     loadModelRef.current = loadModel;
-    loadModel("/explore-assets/models/standard/standard_scene.gltf");
+    loadModel(`${basePath}/explore-assets/models/default/default.gltf`);
 
     // ------UPDATE AND RENDER------
     let animationFrame = 0;

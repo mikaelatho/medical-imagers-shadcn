@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export function contour () {
 
+const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
+
 type View = {
   anterior: string;
   sagittal: string;
@@ -12,24 +14,24 @@ type ViewDictionary = Record<"standard" | "glioblastoma" | "glioma" | "metastati
 
 const contour: ViewDictionary = {
   standard: {
-    anterior: "/explore-assets/images/default/CoronalAnterior_Slice.png",
-    sagittal: "/explore-assets/images/default/LeftSagittal_Slice.png",
-    axial: "/explore-assets/images/default/UpperAxial_Slice.png",
+    anterior: `${basePath}/explore-assets/images/default/CoronalAnterior_Slice.png`,
+    sagittal: `${basePath}/explore-assets/images/default/LeftSagittal_Slice.png`,
+    axial:  `${basePath}/explore-assets/images/default/UpperAxial_Slice.png`,
   },
   glioblastoma: {
-    anterior: "/explore-assets/images/gbm/Glioblastoma_Coronal_Slice.png",
-    sagittal: "/explore-assets/images/gbm/Glioblastoma_Sagittal_Slice.png",
-    axial: "/explore-assets/images/gbm/Glioblastoma_Axial_Slice.png",
+    anterior:  `${basePath}/explore-assets/images/gbm/Glioblastoma_Coronal_Slice.png`,
+    sagittal:  `${basePath}/explore-assets/images/gbm/Glioblastoma_Sagittal_Slice.png`,
+    axial:  `${basePath}/explore-assets/images/gbm/Glioblastoma_Axial_Slice.png`,
   },
   glioma: {
-    anterior: "/explore-assets/images/glioma/Glioma_Coronal_Slice.png",
-    sagittal: "/explore-assets/images/glioma/Glioma_Sagittal_Slice.png",
-    axial: "/explore-assets/images/glioma/Glioma_Axial_Slice.png",
+    anterior:  `${basePath}/explore-assets/images/glioma/Glioma_Coronal_Slice.png`,
+    sagittal:  `${basePath}/explore-assets/images/glioma/Glioma_Sagittal_Slice.png`,
+    axial:  `${basePath}/explore-assets/images/glioma/Glioma_Axial_Slice.png`,
   },
   metastatic: {
-    anterior: "/explore-assets/images/meta/Metastatic_Coronal_Slice.png",
-    sagittal: "/explore-assets/images/meta/Metastatic_Sagittal_Slice.png",
-    axial: "/explore-assets/images/meta/Metastatic_Axial_Slice.png",
+    anterior:  `${basePath}/explore-assets/images/meta/Metastatic_Coronal_Slice.png`,
+    sagittal:  `${basePath}/explore-assets/images/meta/Metastatic_Sagittal_Slice.png`,
+    axial:  `${basePath}/explore-assets/images/meta/Metastatic_Axial_Slice.png`,
   },
 };
 
