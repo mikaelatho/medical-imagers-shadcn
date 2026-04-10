@@ -9,7 +9,6 @@ import Link from "next/link";
 export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
   const {contourImages, setContourImages} = contour();
-  const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
 
 const basePath =
   process.env.NODE_ENV === "production"
