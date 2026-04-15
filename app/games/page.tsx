@@ -34,6 +34,8 @@ export default function Games() {
             </p>
             <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/flashcards">Play Flashcards</Link></Button>
             <br></br>
+            <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/brain-hotspot-game">Play Brain Hotspot</Link></Button>
+            <br></br>
             <Button variant="outline" size="lg" className="my-1"><CircleQuestionMarkIcon />How to play</Button>
           </div>
           <div className="py-5">
