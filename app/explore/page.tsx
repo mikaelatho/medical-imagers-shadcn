@@ -4,11 +4,13 @@ import { navigator } from "./navigator";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
 import { contour } from "./contour";
+import { definition } from "./definition";
 import Link from "next/link";
 
 export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
   const {contourImages, setContourImages} = contour();
+  const {defs, setDefs} = definition();
   const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
 
   return (
@@ -54,7 +56,7 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{position: "relative", width: "100%", height: "74%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
+          <div style={{position: "relative", width: "100%", height: "69%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button 
               variant="explore" 
@@ -63,6 +65,8 @@ export default function Explore() {
                 Back to Default View
             </Button>
           </div>
+
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}> <p style={{fontSize: "17px", fontFamily: "inter", paddingTop: "10px"}}> {defs} </p></div>
 
           <div className="flex gap-4" style={{paddingTop: "15px"}}>
           <img
@@ -90,60 +94,60 @@ export default function Explore() {
         >
     
           <div id="right">
-            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+           <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-black-600 ">
               Parts of the Brain
             </h3>
 
             <Button 
                 variant="explore" 
-                onClick={() => { loadModel( `${basePath}/explore-assets/models/frontal/frontal.gltf`); setContourImages("standard"); }}
+                onClick={() => { loadModel( `${basePath}/explore-assets/models/frontal/frontal.gltf`); setContourImages("standard"); setDefs("frontal"); }}
                 style={{marginBottom: "5%"}}>
                   Frontal Lobe
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/parietal/parietal.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/parietal/parietal.gltf`); setContourImages("standard"); setDefs("parietal"); }}
               style={{marginBottom: "5%"}}>
                 Parietal Lobe
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/occipital/occipital.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/occipital/occipital.gltf`); setContourImages("standard"); setDefs("occipital"); }}
               style={{marginBottom: "5%"}}>
                 Occipital Lobe
               </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/temporal/temporal.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/temporal/temporal.gltf`); setContourImages("standard"); setDefs("temporal"); }}
               style={{marginBottom: "5%"}}>
                 Temporal Lobe
             </Button>
             
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/cerebellum/cerebellum.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/cerebellum/cerebellum.gltf`); setContourImages("standard"); setDefs("cerebellum"); }}
               style={{marginBottom: "5%"}}>
                 Cerebellum
               </Button>
             
             <Button 
             variant="explore"
-            onClick={() => { loadModel( `${basePath}/explore-assets/models/stem/stem.gltf`); setContourImages("standard"); }}
+            onClick={() => { loadModel( `${basePath}/explore-assets/models/stem/stem.gltf`); setContourImages("standard"); setDefs("stem"); }}
             style={{marginBottom: "5%"}}>
               Brain Stem
             </Button>
 
-            <br />
-            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+            <br /><br /><br />
+            <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-black-600">
               Types of Diseases
             </h3>
 
             <Button 
               variant="explore" 
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioblastoma/glioblastoma.gltf`); setContourImages("glioblastoma"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioblastoma/glioblastoma.gltf`); setContourImages("glioblastoma"); setDefs("glioblastoma"); }}
               style={{marginBottom: "5%"}}
               >
               Glioblastoma
@@ -151,16 +155,16 @@ export default function Explore() {
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioma2/glioma2.gltf`); setContourImages("glioma"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioma2/glioma2.gltf`); setContourImages("glioma"); setDefs("glioma"); }}
               style={{marginBottom: "5%"}}>
                 Glioma
             </Button>
 
             <Button 
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/meta2/meta2.gltf`); setContourImages("metastatic"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/meta2/meta2.gltf`); setContourImages("metastatic"); setDefs("metastatic"); }}
               style={{marginBottom: "5%"}}>
-                Metastatic Disease
+                Metastatic
             </Button>
 
           </div>
@@ -243,7 +247,7 @@ export default function Explore() {
 
           {/* ---STEP ONE---*/}
           <div>
-          <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
               1. Start With the Anatomical Planes
           </h3>
           <p>
@@ -266,7 +270,7 @@ export default function Explore() {
 
         <div>
          {/* ---STEP TWO---*/}
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           2. Observe the Overall Structure
         </h3>
         <p>Focus on the big picture first. Notice the shape and volume before jumping into details.</p>
@@ -284,7 +288,7 @@ export default function Explore() {
 
         <div>
          {/* ---STEP THREE---*/}
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           3. Identify Key Brain Regions
         </h3>
         <p>
@@ -305,7 +309,7 @@ export default function Explore() {
 
          {/* ---STEP FOUR---*/}
          <div>
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           4. Understanding Scan Contrasts
         </h3>
         <p>
@@ -328,7 +332,7 @@ export default function Explore() {
 
          {/* ---STEP FIVE---*/}
          <div>
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           5. Explore at Your Own Pace
         </h3>
         <p>

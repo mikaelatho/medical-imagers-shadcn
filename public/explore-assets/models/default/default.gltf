@@ -38,7 +38,7 @@
 					]
 				}
 			},
-			"name":"Standard1",
+			"name":"Standard1.001",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0
 			}
@@ -46,7 +46,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Standard1",
+			"name":"Standard1.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -64,7 +64,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":115507,
+			"count":115506,
 			"max":[
 				69.16728210449219,
 				61.400665283203125,
@@ -80,13 +80,13 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":115507,
+			"count":115506,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":115507,
+			"count":115506,
 			"type":"VEC3"
 		},
 		{
@@ -99,32 +99,32 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1386084,
+			"byteLength":1386072,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1386084,
-			"byteOffset":1386084,
+			"byteLength":1386072,
+			"byteOffset":1386072,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1386084,
-			"byteOffset":2772168,
+			"byteLength":1386072,
+			"byteOffset":2772144,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2699904,
-			"byteOffset":4158252,
+			"byteOffset":4158216,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":6858156,
+			"byteLength":6858120,
 			"uri":"default.bin"
 		}
 	]
