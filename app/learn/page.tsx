@@ -58,7 +58,7 @@ export default function LearnPage() {
 
 
       {/* how mri works */}
-      <div className="px-6 sm:px-20 py-20 items-center bg-blue-50">
+      <div id="how-mri-works" className="px-6 sm:px-20 py-20 items-center bg-blue-50">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-40 text-left">
           <div className="place-items-center self-center">
             <h2 className="text-3xl md:text-4xl font-bold font-source-serif-4 my-5 text-slate-900">
@@ -128,7 +128,7 @@ export default function LearnPage() {
 
 
       {/* mri vs others */}
-      <section className="px-6 sm:px-20 py-[60px]">
+      <section id="compare-imaging" className="px-6 sm:px-20 py-[60px]">
         <h2 className="text-center font-source-serif-4 font-semibold text-[32px] leading-[36px] tracking-[-0.0075em] text-[#002BB3] mb-10">
           MRI vs. Other Imaging
         </h2>
@@ -238,7 +238,7 @@ export default function LearnPage() {
 
 
       {/* glossary */}
-      <div className="items-center justify-center mx-auto max-w-7xl flex-auto">
+      <div id="glossary" className="items-center justify-center mx-auto max-w-7xl flex-auto">
         <div className="px-6 sm:px-20 py-20 grid grid-row">
           <h3 className="font-inter text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-[#0046E7]">
             MRI Terminology Glossary

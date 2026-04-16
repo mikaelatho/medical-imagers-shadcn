@@ -63,13 +63,13 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/learn">Learn</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/learn" title="How do MRIs work?">
+                  <ListItem href="/learn#how-mri-works" title="How do MRIs work?">
                     Learn the technology behind MRIs.
                   </ListItem>
-                  <ListItem href="/learn" title="Compare Imaging Techniques">
+                  <ListItem href="/learn#compare-imaging" title="Compare Imaging Techniques">
                     Learn how MRI compares to CT and X-Ray.
                   </ListItem>
-                  <ListItem href="/learn" title="MRI Terminology">
+                  <ListItem href="/learn#glossary" title="MRI Terminology">
                     Identify key MRI terminology through our glossary.
                   </ListItem>
                 </ul>
