@@ -105,12 +105,12 @@ export default function About() {
           <div className="flex flex-col items-center text-center">
             <LaptopMinimalIcon className="text-white bg-blue-800 rounded-full p-2" size={40}></LaptopMinimalIcon>
             <h4 className="py-5 text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Ease of Learning</h4>
-            <p className="font=inter text-slate-800">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
+            <p className="font=inter text-slate-800">BrainMRI was designed to make real MRI data and medical terms understandable to a wide audience. Our team made sure throughout development that our website remained worded in a way that ensures learners could comprehend more complex medical terms and images surrounding MRIs without feeling frustrated.</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <ZapIcon className="text-white bg-blue-800 rounded-full p-2" size={40}></ZapIcon>
             <h4 className="py-5 text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Engaging Experience</h4>
-            <p className="font=inter text-slate-800">BrainMRI was created to allow medical terms to be accessible for learners of all ages.  We collaborated with professors from Purdue University to input data from real MRI scans, and our team worked to create this website from scratch as well as implement fun games to encourage the quest for knowledge.</p>
+            <p className="font=inter text-slate-800">Our team believes that one of the best way to learn material is to engage with it. That’s why we made sure to implement games into our website- to make sure MRI images and terms could be interacted with in a fun and meaningful way that helps learners learn without it feeling like a burden.</p>
           </div>
         </div>
       </div>

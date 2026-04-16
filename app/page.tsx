@@ -54,7 +54,7 @@ export default function Home() {
               <div>
                 <Button variant="default" asChild><Link href="/explore">Explore Data</Link></Button>
               </div>
-            </div>            
+            </div>
           </div>
           <div className="flex-1 flex justify-center">
             <img src={`${basePath}/mri_home.png`} alt="MRI Visualization" className="w-sm sm:w-full max-w-md h-auto object-contain"></img>
@@ -79,7 +79,7 @@ export default function Home() {
                   </CardAction>
                   <CardTitle>Explore MRI Visualizations</CardTitle>
                   <CardDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur.
+                    Interact with labeled brain structures and learn how to read MRI scans.
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
@@ -101,8 +101,7 @@ export default function Home() {
                   </CardAction>
                   <CardTitle>Learn MRI terminology</CardTitle>
                   <CardDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur.
-                  </CardDescription>
+                    Understand what MRI is, how it works, and essential terminology.                  </CardDescription>
                 </CardHeader>
                 <CardFooter>
                   <Button className="w-full">Dive into Learning</Button>
@@ -122,7 +121,7 @@ export default function Home() {
                   </CardAction>
                   <CardTitle>Check your knowledge</CardTitle>
                   <CardDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur.
+                    Test your understanding in a fun way while practicing how to read MRI scans.
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
