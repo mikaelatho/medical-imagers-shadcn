@@ -94,7 +94,7 @@ export default function Explore() {
         >
     
           <div id="right">
-           <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-black-600 ">
+           <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600 ">
               Parts of the Brain
             </h3>
 
@@ -141,7 +141,7 @@ export default function Explore() {
             </Button>
 
             <br /><br /><br />
-            <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-black-600">
+            <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
               Types of Diseases
             </h3>
 
