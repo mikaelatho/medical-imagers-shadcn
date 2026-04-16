@@ -32,7 +32,9 @@ export default function Games() {
             <p className="font-inter text-slate-800 sm:text-lg py-5 font-bold max-w-7xl">
               Learn to interpret brain MRIs, think like a clinician, and solve  diagnostic cases through interactive practice.
             </p>
-            <Button variant="default" size="lg" className="my-1"><PlayIcon />Play Now</Button>
+            <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/flashcards">Play Flashcards</Link></Button>
+            <br></br>
+            <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/brain-hotspot-game">Play Brain Hotspot</Link></Button>
             <br></br>
             <Button variant="outline" size="lg" className="my-1"><CircleQuestionMarkIcon />How to play</Button>
           </div>

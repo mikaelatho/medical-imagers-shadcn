@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <div className="flex flex-col sm:flex-row w-full justify-between items-center bg-blue-900
-     p-8 pb-20 text-white gap-8 sm:px-25 font-inter">
+     p-8 pt-10 pb-30 text-white gap-8 sm:px-25 font-inter">
     {/* Left Side */}
     <div className="items-center text-center sm:text-left">
       <h3 className="scroll-m-20 text-xl font-bold">LearnMRI</h3>
@@ -22,33 +22,34 @@ export function Footer() {
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/learn">Learn</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer">Interactive Viewer</li>
-          <li className="pb-1 hover:underline cursor-pointer">Brain Anatomy</li>
-          <li className="pb-1 hover:underline cursor-pointer">Glossary</li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#how-mri-works">Comparison</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#compare-imaging">Brain Anatomy</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#glossary">Glossary</Link></li>
         </ul>
       </div>
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/explore">Explore</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer">Quiz</li>
-          <li className="pb-1 hover:underline cursor-pointer">Trivia</li>
-          <li className="pb-1 hover:underline cursor-pointer">Progress</li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/explore">Interactive Viewer</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/explore">Anatomy</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/explore">Instructions</Link></li>
         </ul>
       </div>
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/games">Games</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer">Team</li>
-          <li className="pb-1 hover:underline cursor-pointer">Objectives</li>
-          <li className="pb-1 hover:underline cursor-pointer">Sources</li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/games">Diagnostic Trainer</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/games">Progress</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/games">Goals</Link></li>
         </ul>
       </div>
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/about">About</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer">How do MRIs work?</li>
-          <li className="pb-1 vhover:underline cursor-pointer">Brain Anatomy</li>
-          <li className="pb-1 hover:underline cursor-pointer">Glossary</li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#meet-the-team">Meet the Team</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#data-sources">Data Sources</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#faq">FAQ</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about">Contact</Link></li>
         </ul>
       </div>
     </div>

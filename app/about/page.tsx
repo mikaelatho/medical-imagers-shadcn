@@ -69,7 +69,7 @@ export default function About() {
           <h3 className="text-center text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">Meet the Team</h3>
           
           {/* meet the team */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 py-8">
+          <div id="meet-the-team" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 py-8">
             {teamMembers.map((member) => (
               <div key={member.name}>
                 <Card className="relative mx-auto w-full max-w-sm pt-0 overflow-hidden">
@@ -115,7 +115,7 @@ export default function About() {
         </div>
       </div>
       {/* data sources */}
-      <div className="px-6 sm:px-20 py-20 mx-auto max-w-7xl flex-auto min-h-screen">
+      <div id="data-sources" className="px-6 sm:px-20 py-20 mx-auto max-w-7xl flex-auto min-h-screen">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <div>
             <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
@@ -162,7 +162,7 @@ export default function About() {
         </div>
 
         {/* FAQ */}
-        <h3 className="text-left text-2xl pt-20 pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
+        <h3 id="faq" className="text-left text-2xl pt-20 pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           Frequently Asked Questions
         </h3>
         <Accordion type="single" collapsible defaultValue="shipping" className="max-w-6xl">
