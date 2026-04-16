@@ -99,10 +99,10 @@ export function Nav() {
               <NavigationMenuTrigger><Link href="/about">About</Link></NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-96">
-                  <ListItem href="/about" title="Meet the Team">
+                  <ListItem href="/about#meet-the-team" title="Meet the Team">
                     An overview of the team behind LearnMRI.
                   </ListItem>
-                  <ListItem href="/about" title="Data Sources">
+                  <ListItem href="/about#data-sources" title="Data Sources">
                     Review the medical literature backing LearnMRI.
                   </ListItem>
                 </ul>

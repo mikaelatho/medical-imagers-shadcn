@@ -22,9 +22,9 @@ export function Footer() {
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/learn">Learn</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn">Comparison</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn">Brain Anatomy</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn">Glossary</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#how-mri-works">Comparison</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#compare-imaging">Brain Anatomy</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/learn#glossary">Glossary</Link></li>
         </ul>
       </div>
       <div>
@@ -46,9 +46,9 @@ export function Footer() {
       <div>
         <ul>
           <li className="pb-1 hover:underline cursor-pointer font-bold"><Link href="/about">About</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about">Meet the Team</Link></li>
-          <li className="pb-1 vhover:underline cursor-pointer"><Link href="/about">Data Sources</Link></li>
-          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about">FAQ</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#meet-the-team">Meet the Team</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#data-sources">Data Sources</Link></li>
+          <li className="pb-1 hover:underline cursor-pointer"><Link href="/about#faq">FAQ</Link></li>
           <li className="pb-1 hover:underline cursor-pointer"><Link href="/about">Contact</Link></li>
         </ul>
       </div>
