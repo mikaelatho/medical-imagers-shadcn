@@ -32,11 +32,11 @@ export default function Games() {
             <p className="font-inter text-slate-800 sm:text-lg py-5 font-bold max-w-7xl">
               Learn to interpret brain MRIs, think like a clinician, and solve  diagnostic cases through interactive practice.
             </p>
-            <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/flashcards">Play Flashcards</Link></Button>
+            <Button variant="default" size="lg" className="my-1 cursor-pointer"><PlayIcon /><Link href="/flashcards">Play Flashcards</Link></Button>
             <br></br>
-            <Button variant="default" size="lg" className="my-1"><PlayIcon /><Link href="/brain-hotspot-game">Play Brain Hotspot</Link></Button>
+            <Button variant="default" size="lg" className="my-1 cursor-pointer"><PlayIcon /><Link href="/brain-hotspot-game">Play Brain Hotspot</Link></Button>
             <br></br>
-            <Button variant="outline" size="lg" className="my-1"><CircleQuestionMarkIcon />How to play</Button>
+            <Button variant="outline" size="lg" className="my-1 cursor-pointer"><CircleQuestionMarkIcon /> <Link href="/games#how-it-works">How to play</Link></Button>
           </div>
           <div className="py-5">
             <div className="outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-2 py-2">
@@ -44,7 +44,7 @@ export default function Games() {
             </div>
           </div>
         </div>
-        {/* Progress Section*/}
+        {/* Progress Section
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 px-6 sm:px-20 py-5 pb-20 items-stretch justify-center">
           <div className="rounded-[1vw] bg-linear-to-t from-blue-600 to-blue-400 py-10 px-2">
             <h3 className="font-inter font-medium text-xl text-white text-center py-2 ">Games Completed</h3>
@@ -69,11 +69,9 @@ export default function Games() {
               <Progress value={66} id="progress-upload" className="h-3 w-full bg-white/20" />
             </Field>
           </div>
-
-
-        </div>
-        <div className="px-6 sm:px-20 py-5 pb-20">
-          <h3 className="text-left text-2xl pt-10 sm:text-3xl font-medium font-source-serif-4 text-blue-600">How it Works</h3>
+        </div> */}
+        <div id="how-it-works" className="px-6 sm:px-20 py-5 pb-20">
+          <h3  className="text-left text-2xl pt-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600 scroll-smooth">How it Works</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 py-10 gap-5">
             <div>
               <div className="bg-white shadow-sm outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-5 py-5 min-h-[220]">
