@@ -4,21 +4,23 @@ import { navigator } from "./navigator";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
 import { contour } from "./contour";
+import { definition } from "./definition";
+import { AlignRightIcon, ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Explore() {
   const { viewerRef, loadModel, setOpacity } = navigator();
   const {contourImages, setContourImages} = contour();
+  const {defs, setDefs} = definition();
   const basePath = process.env.NODE_ENV === "production" ? "/medical-imagers-shadcn" : "";
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start px-1.5 sm:px-5" style={{scrollBehavior: "smooth"}}>
-      <div style={{marginRight: "43%"}}>
-        
+    <main className="mx-6 sm:mx-18 min-h-screen flex flex-col items-center justify-start px-1.5 sm:px-5" style={{ scrollBehavior: "smooth" }}>
+      <div className="">
+
         {/* ----------HEADER---------- */}
-        
-      <div>
-        <br/> <br/>
+        <div>
+          <br /> <br />
           <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5 text-left">
             Explore Brain MRI Visualizations
           </h1>
@@ -28,22 +30,22 @@ export default function Explore() {
         </div>
 
         {/* ----------SUBTITLE---------- */}
-        <div className="flex gap-4">
-          <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <div className="flex gap-4 pt-8 my-2">
+          <h2 className="text-4xl sm:text-3xl font-medium font-source-serif-4 text-blue-600 my-2 text-left">
             Interactive MRI Viewer
           </h2>
-          <Button variant="explore" style={{marginBottom: "5%", marginTop: "22px"}} onClick={() => document.getElementById('explore')?.scrollIntoView({behavior: 'smooth'})}>Exploration Guide</Button>
+          <Button variant="default" className="my-2" onClick={() => document.getElementById('explore')?.scrollIntoView({ behavior: 'smooth' })}>Exploration Guide <ArrowRightIcon/></Button>
           <p></p>
         </div>
 
         {/* ----------FILTER BUTTONS---------- */}
         <div className="flex gap-4">
           <p> View type: </p>
-          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(1)}>Volume Render</Button>
-          <Button variant="explore" style={{marginBottom: "5%"}} onClick={() => setOpacity(0.15)}>Low Contrast</Button>
-          <br/>
+          <Button variant="outline" style={{ marginBottom: "5%" }} onClick={() => setOpacity(1)}>Volume Render</Button>
+          <Button variant="outline" style={{ marginBottom: "5%" }} onClick={() => setOpacity(0.15)}>Low Contrast</Button>
+          <br />
         </div>
-    </div>
+      </div>
 
       <div
         id="float-container"
@@ -54,113 +56,115 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{position: "relative", width: "100%", height: "74%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden"}}>
+          <div style={{ position: "relative", width: "100%", height: "74%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden" }}>
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
-            <Button 
-              variant="explore" 
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/default/default.gltf`); setContourImages("standard"); }}
-              style={{marginBottom: "5%", position: "absolute", top: "0", left: "0"}}>
-                Back to Default View
+            <Button
+              variant="explore"
+              onClick={() => { loadModel(`${basePath}/explore-assets/models/default/default.gltf`); setContourImages("standard"); }}
+              style={{ marginBottom: "5%", position: "absolute", top: "0", left: "0" }}>
+              Back to Default View
             </Button>
           </div>
 
-          <div className="flex gap-4" style={{paddingTop: "15px"}}>
-          <img
-            src={contourImages.anterior}
-            alt="Coronal Anterior Slice"
-            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
-          />
-          <img
-            src={contourImages.sagittal}
-            alt="Left Sagittal Slice"
-            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
-          />
-          <img
-            src={contourImages.axial}
-            alt="Upper Axial Slice"
-            style={{width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px"}}
-          />
-        </div>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}> <p style={{fontSize: "17px", fontFamily: "inter", paddingTop: "10px"}}> {defs} </p></div>
+
+          <div className="flex gap-4" style={{ paddingTop: "15px" }}>
+            <img
+              src={contourImages.anterior}
+              alt="Coronal Anterior Slice"
+              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+            />
+            <img
+              src={contourImages.sagittal}
+              alt="Left Sagittal Slice"
+              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+            />
+            <img
+              src={contourImages.axial}
+              alt="Upper Axial Slice"
+              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+            />
+          </div>
         </div>
 
         {/* ----------BUTTON CONTAINER---------- */}
         <div
           id="float-child"
-          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%"}}
+          style={{ flex: "1", border: "2px solid black", borderRadius: "10px", padding: "5%", marginRight: "20px", width: "25%" }}
         >
-    
+
           <div id="right">
-            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+           <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600 ">
               Parts of the Brain
             </h3>
 
             <Button 
                 variant="explore" 
-                onClick={() => { loadModel( `${basePath}/explore-assets/models/frontal/frontal.gltf`); setContourImages("standard"); }}
+                onClick={() => { loadModel( `${basePath}/explore-assets/models/frontal/frontal.gltf`); setContourImages("standard"); setDefs("frontal"); }}
                 style={{marginBottom: "5%"}}>
                   Frontal Lobe
             </Button>
 
-            <Button 
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/parietal/parietal.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/parietal/parietal.gltf`); setContourImages("standard"); setDefs("parietal"); }}
               style={{marginBottom: "5%"}}>
                 Parietal Lobe
             </Button>
 
-            <Button 
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/occipital/occipital.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/occipital/occipital.gltf`); setContourImages("standard"); setDefs("occipital"); }}
               style={{marginBottom: "5%"}}>
                 Occipital Lobe
               </Button>
 
-            <Button 
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/temporal/temporal.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/temporal/temporal.gltf`); setContourImages("standard"); setDefs("temporal"); }}
               style={{marginBottom: "5%"}}>
                 Temporal Lobe
             </Button>
-            
-            <Button 
+
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/cerebellum/cerebellum.gltf`); setContourImages("standard"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/cerebellum/cerebellum.gltf`); setContourImages("standard"); setDefs("cerebellum"); }}
               style={{marginBottom: "5%"}}>
                 Cerebellum
               </Button>
             
             <Button 
             variant="explore"
-            onClick={() => { loadModel( `${basePath}/explore-assets/models/stem/stem.gltf`); setContourImages("standard"); }}
+            onClick={() => { loadModel( `${basePath}/explore-assets/models/stem/stem.gltf`); setContourImages("standard"); setDefs("stem"); }}
             style={{marginBottom: "5%"}}>
               Brain Stem
             </Button>
 
-            <br />
-            <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left underline">
+            <br /><br /><br />
+            <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
               Types of Diseases
             </h3>
 
             <Button 
               variant="explore" 
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioblastoma/glioblastoma.gltf`); setContourImages("glioblastoma"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioblastoma/glioblastoma.gltf`); setContourImages("glioblastoma"); setDefs("glioblastoma"); }}
               style={{marginBottom: "5%"}}
               >
               Glioblastoma
             </Button>
 
-            <Button 
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioma2/glioma2.gltf`); setContourImages("glioma"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/glioma2/glioma2.gltf`); setContourImages("glioma"); setDefs("glioma"); }}
               style={{marginBottom: "5%"}}>
                 Glioma
             </Button>
 
-            <Button 
+            <Button
               variant="explore"
-              onClick={() => { loadModel( `${basePath}/explore-assets/models/meta2/meta2.gltf`); setContourImages("metastatic"); }}
+              onClick={() => { loadModel( `${basePath}/explore-assets/models/meta2/meta2.gltf`); setContourImages("metastatic"); setDefs("metastatic"); }}
               style={{marginBottom: "5%"}}>
-                Metastatic Disease
+                Metastatic
             </Button>
 
           </div>
@@ -172,54 +176,54 @@ export default function Explore() {
 
       <div className="px-6 sm:px-20 pb-20 items-center">
         <h2 className="text-center text-2xl py-5 sm:text-3xl font-bold font-source-serif-4 text-blue-700 my-5">
-          <br/><br/>
+          <br /><br />
           Want to learn more?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
           <div>
             {/* ----------CARD 1---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info1.jpg`}
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4632105/">
-                <Button className="w-full">Advanced MRI Imaging</Button>
+                  <Button className="w-full">Advanced MRI Imaging</Button>
                 </Link>
               </CardFooter>
             </Card>
           </div>
           <div>
             {/* ----------CARD 2---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info2.png`}
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="https://www.cancerimagingarchive.net/browse-collections/">
-                <Button className="w-full">Data Sources</Button>
+                  <Button className="w-full">Data Sources</Button>
                 </Link>
               </CardFooter>
             </Card>
           </div>
           <div>
             {/* ----------CARD 3---------- */}
-            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Card className="relative mx-auto w-full max-w-sm pt-0" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
               <div className="rounded-t-lg absolute inset-0 z-30 aspect-video bg-black/5" />
               <img
                 src={`${basePath}/explore-assets/images/info/info3.jpg`}
                 alt="6-sided MRI visualization"
                 className="rounded-t-lg relative z-20 aspect-video w-full object-cover brightness-80 dark:brightness-40"
               />
-              <CardFooter>
+              <CardFooter className="w-full flex justify-center p-4">
                 <Link href="../games/page.tsx">
-                <Button className="w-full">Check your Knowledge</Button>
+                  <Button className="w-full">Check your Knowledge</Button>
                 </Link>
               </CardFooter>
             </Card>
@@ -229,62 +233,62 @@ export default function Explore() {
 
       {/* ----------WALK THROUGH---------- */}
 
-          <div style={{marginLeft: "15%"}} id="explore">
-            <br/><br/><br/>
-          <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
-              How to Use the Interactive Viewer
-          </h2>
+      <div style={{ marginLeft: "15%" }} id="explore">
+        <br /><br /><br />
+        <h2 className="text-4xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          How to Use the Interactive Viewer
+        </h2>
 
-      <div style={{display: "grid", gridTemplateColumns: "50% 50%", gap: "30px", alignItems: "start", marginLeft: "start"}}>
+        <div style={{ display: "grid", gridTemplateColumns: "50% 50%", gap: "30px", alignItems: "start", marginLeft: "start" }}>
 
-      {/* ----------LEFT COLUMN---------- */}
+          {/* ----------LEFT COLUMN---------- */}
 
-       {/* ---TITLE---*/}
+          {/* ---TITLE---*/}
 
           {/* ---STEP ONE---*/}
           <div>
-          <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+          <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
               1. Start With the Anatomical Planes
-          </h3>
-          <p>
-            MRI scans are shown in different views (axial, sagittal, or coronal). Axial view shows upper and lower planes,
-            sagittal view shows the scan's left and right planes, and axial view shows the scan's front and back planes. Take
-            a moment to orient yourself before looking at details.
-        </p>
-        <br />
-        <br />
-        </div>
+            </h3>
+            <p>
+              MRI scans are shown in different views (axial, sagittal, or coronal). Axial view shows upper and lower planes,
+              sagittal view shows the scan's left and right planes, and axial view shows the scan's front and back planes. Take
+              a moment to orient yourself before looking at details.
+            </p>
+            <br />
+            <br />
+          </div>
 
-         {/* ---IMAGE ONE---*/}
-        <div>
-        <img
-            src={`${basePath}/explore-assets/images/walkthrough/wt1.png`}
-            alt="Upper Axial Slice"
-             style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
-          />
-        </div>
+          {/* ---IMAGE ONE---*/}
+          <div>
+            <img
+              src={`${basePath}/explore-assets/images/walkthrough/wt1.png`}
+              alt="Upper Axial Slice"
+              style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px" }}
+            />
+          </div>
 
         <div>
          {/* ---STEP TWO---*/}
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           2. Observe the Overall Structure
         </h3>
         <p>Focus on the big picture first. Notice the shape and volume before jumping into details.</p>
         <br />
         </div>
 
-        {/* ---IMAGE TWO---*/}
-        <div>
-        <img
-            src={`${basePath}/explore-assets/images/walkthrough/wt2.png`}
-            alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
-          />
-        </div>
+          {/* ---IMAGE TWO---*/}
+          <div>
+            <img
+              src={`${basePath}/explore-assets/images/walkthrough/wt2.png`}
+              alt="Upper Axial Slice"
+              style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px" }}
+            />
+          </div>
 
         <div>
          {/* ---STEP THREE---*/}
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           3. Identify Key Brain Regions
         </h3>
         <p>
@@ -295,17 +299,17 @@ export default function Explore() {
         </div>
 
           {/* ---IMAGE THREE---*/}
-        <div>
-        <img
-            src={`${basePath}/explore-assets/images/walkthrough/wt2.png`}
-            alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
-          />
-        </div>
+          <div>
+            <img
+              src={`${basePath}/explore-assets/images/walkthrough/wt2.png`}
+              alt="Upper Axial Slice"
+              style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px" }}
+            />
+          </div>
 
          {/* ---STEP FOUR---*/}
          <div>
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           4. Understanding Scan Contrasts
         </h3>
         <p>
@@ -317,18 +321,18 @@ export default function Explore() {
         <br />
         </div>
 
-        {/* ---IMAGE FOUR---*/}
-        <div>
-        <img
-            src={`${basePath}/explore-assets/images/walkthrough/wt4.png`}
-            alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
-          />
-        </div>
+          {/* ---IMAGE FOUR---*/}
+          <div>
+            <img
+              src={`${basePath}/explore-assets/images/walkthrough/wt4.png`}
+              alt="Upper Axial Slice"
+              style={{ width: "370px", height: "200px", borderLeft: "5px", borderRight: "5px", borderStyle: "solid", borderColor: "black", borderRadius: "10px", marginRight: "9px", marginTop: "40px" }}
+            />
+          </div>
 
          {/* ---STEP FIVE---*/}
          <div>
-        <h3 className="text-2xl sm:text-3xl font-bold font-source-serif-4 text-black-700 my-5 text-left">
+        <h3 className="text-left text-2xl pb-5 sm:text-3xl font-medium font-source-serif-4 text-blue-600">
           5. Explore at Your Own Pace
         </h3>
         <p>
@@ -339,17 +343,17 @@ export default function Explore() {
         <br />
         </div>
 
-                {/* ---IMAGE FIVE---*/}
-        <div>
-        <img
-            src={`${basePath}/explore-assets/images/walkthrough/wt5.png`}
-            alt="Upper Axial Slice"
-            style={{ width: "370px", height: "200px", borderWidth: "5px", borderStyle: "solid", borderColor: "#F5F5F5", borderRadius: "10px", marginRight: "9px", marginTop: "40px"}}
-          />
+          {/* ---IMAGE FIVE---*/}
+          <div>
+            <img
+              src={`${basePath}/explore-assets/images/walkthrough/wt5.png`}
+              alt="Upper Axial Slice"
+              style={{ width: "370px", height: "200px", borderWidth: "5px", borderStyle: "solid", borderColor: "#F5F5F5", borderRadius: "10px", marginRight: "9px", marginTop: "40px" }}
+            />
+          </div>
         </div>
+        <br /><br /><br />
       </div>
-        <br/><br/><br/>
-        </div>
     </main>
   );
 }
