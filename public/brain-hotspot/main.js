@@ -1,10 +1,13 @@
 $(document).ready(function() {
     var image = 1;
+    var redDotText1 = "hello";
+    var redDotText2 = "hello";
+    var redDotText3 = "hello";
     $('.red-dot-1').hover(
         // Function to run when mouse enters (mouseenter)
         function() {
             // Find the .image-text within the current container and fade it in
-            $('.image-container').find('.image-text').text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); 
+            $('.image-container').find('.image-text').text(redDotText1); 
         },
         // Function to run when mouse leaves (mouseleave)
         function() {
@@ -16,7 +19,7 @@ $(document).ready(function() {
         // Function to run when mouse enters (mouseenter)
         function() {
             // Find the .image-text within the current container and fade it in
-            $('.image-container').find('.image-text').text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); 
+            $('.image-container').find('.image-text').text(redDotText2); 
         },
         // Function to run when mouse leaves (mouseleave)
         function() {
@@ -28,7 +31,7 @@ $(document).ready(function() {
         // Function to run when mouse enters (mouseenter)
         function() {
             // Find the .image-text within the current container and fade it in
-            $('.image-container').find('.image-text').text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); 
+            $('.image-container').find('.image-text').text(redDotText3); 
         },
         // Function to run when mouse leaves (mouseleave)
         function() {

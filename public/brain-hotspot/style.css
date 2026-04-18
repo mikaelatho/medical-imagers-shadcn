@@ -6,24 +6,30 @@ body {
 }
 
 .image-container {
-    /* Important for absolute positioning of the text */
-    position: relative; 
-    /* Optional: set width/height or display: inline-block */
+    /*position: relative;  
     width: 400px;
-    height: 700px;
+    height: 700px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 15vh;
 }
 
 .image-text {
     /* Hide the text by default */ 
     /* Position the text over the image */
-    position: absolute; 
+    position: relative; 
     top: 0px;
-    left: 448px;
+    /*left: 448px;*/
     /* Optional styling */
     background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
     color: black;
     padding: 10px;
-    width: 75%;
+    width: 25%;
     height: 494px;
     box-sizing: border-box;
 }
@@ -47,10 +53,13 @@ body {
 }
 
 .left-button {
-  position: absolute;
+  position: relative;
+  top: 33%;
+  right: 75%;
 }
 
 .right-button {
-  position: absolute;
-  left: 55px;
+  position: relative;
+  top: 33%;
+  right: 72%;
 }

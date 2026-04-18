@@ -27,7 +27,7 @@ export default function BrainHotspotPage() {
             Brain Hotspot Game
           </h1>
           <p className="font-inter text-slate-800 sm:text-lg py-2 font-medium max-w-3xl">
-            Hover over the highlighted regions and use the arrows to explore the scan.
+            Hover over the highlighted regions to explore the scan. Use the arrow buttons to switch between scans.
           </p>
         </div>
 
