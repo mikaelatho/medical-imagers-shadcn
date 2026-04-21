@@ -36,12 +36,12 @@ const teamMembers = [
   { name: "Mikaela", role: "Web Dev", img: "MikaelaThompson.png" },
   { name: "Elijah", role: "Game Dev", img: "elijah.png" },
   { name: "Anderson", role: "UX Design", img: "Anderson Tsan.jpg" },
-  { name: "Kimberly", role: "UX Design", img: "Kimberly.png" },
+  { name: "Kimberly", role: "UX Design", img: "kimberly.png" },
   { name: "Kaylee", role: "UX Design", img: "KayleeYoung.jpg" },
   { name: "Ethan", role: "Game Dev", img: "Ethan Baxter.png" },
   { name: "Macy", role: "UX Design", img: "MacyBosworth.jpg" },
   { name: "Erika", role: "UX Design", img: "ErikaShin.jpg" },
-  { name: "Vito", role: "Web Dev", img: "VitoHerce.jpg" },
+  { name: "Vito", role: "Web Dev", img: "VitoHerce.JPG" },
   { name: "Alex", role: "Game Dev", img: "alex.png" },
 ];
 
