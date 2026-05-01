@@ -28,7 +28,7 @@ export default function Games() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 sm:px-20 pt-20 pb-10">
           <div className="py-5">
             {/*Games*/}
-            <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">MRI Diagnostic Trainer</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold font-source-serif-4 text-blue-700 my-5">Practice and Play</h1>
             <p className="font-inter text-slate-800 sm:text-lg py-5 font-bold max-w-7xl">
               Learn to interpret brain MRIs, think like a clinician, and solve  diagnostic cases through interactive practice.
             </p>
@@ -39,7 +39,7 @@ export default function Games() {
           </div>
           <div className="py-5">
             <div className="outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-2 py-2">
-              <img src={`${basePath}/mri8.png`} alt="MRI Diagnostic Trainer" className="inline-block align-middle w-full sm:max-w-7xl"></img>
+              <img src={`${basePath}/mri8.png`} alt="Practice and Play" className="inline-block align-middle w-full sm:max-w-7xl"></img>
             </div>
           </div>
         </div>
@@ -76,24 +76,24 @@ export default function Games() {
               <div className="bg-white shadow-sm outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-5 py-5 min-h-[220]">
                 <EyeIcon className="text-white bg-blue-600 rounded-full py-1 px-1 mb-2" size={32} />
                 <p className="font-inter text-slate-600 text-sm my-2">Step 1</p>
-                <h3 className="font-inter text-slate-800 my-2 font-medium">Observe</h3>
-                <p className="font-inter text-slate-600 text-sm">Carefully examine the MRI scan. Look at different slices and imaging sequences.</p>
+                <h3 className="font-inter text-slate-800 my-2 font-medium">Identify Vocabulary</h3>
+                <p className="font-inter text-slate-600 text-sm">Take a second to process the phrase. There is no problem if it feels unfamiliar to you. You can learn more as the game progresses.</p>
               </div>
             </div>
             <div>
               <div className="bg-white shadow-sm outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-5 py-5 min-h-[220]">
                 <SearchIcon className="text-white bg-blue-600 rounded-full py-1 px-1 mb-2" size={32} />
                 <p className="font-inter text-slate-600 text-sm my-2">Step 2</p>
-                <h3 className="font-inter text-slate-800 my-2 font-medium">Identify and Analyze</h3>
-                <p className="font-inter text-slate-600 text-sm">Pinpoint locations of abnormalities, structural changes, or lesions from the brain scans. Mark key findings to build your diagnostic evidence.</p>
+                <h3 className="font-inter text-slate-800 my-2 font-medium">Define</h3>
+                <p className="font-inter text-slate-600 text-sm">Flip a card to reveal the definition. Make sure to recall these definitions in each playthrough. </p>
               </div>
             </div>
             <div>
               <div className="bg-white shadow-sm outline-2 outline-slate-200 sm:outline-offset-2 rounded-[0.5vw] px-5 py-5 min-h-[220]">
                 <ClipboardCheckIcon className="text-white bg-blue-600 rounded-full py-1 px-1 mb-2" size={32} />
                 <p className="font-inter text-slate-600 text-sm my-2">Step 3</p>
-                <h3 className="font-inter text-slate-800 my-2 font-medium">Diagnose</h3>
-                <p className="font-inter text-slate-600 text-sm">Make your diagnosis based on the evidence. Get instant feedback and learn from each case.
+                <h3 className="font-inter text-slate-800 my-2 font-medium">Practice and Play</h3>
+                <p className="font-inter text-slate-600 text-sm">Each time you complete the game, you will find yourself more comfortable with imaging terminology. Practice and replay as often as you would like.
                 </p>
               </div>
             </div>
@@ -106,8 +106,8 @@ export default function Games() {
                 <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={28} />
               </div>
               <div>
-                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Reading MRI</h2>
-                <p className="font-inter text-sm text-slate-800 my-2">Master the fundamentals of neuroimaging. You'll learn how to navigate different planes—axial, sagittal, and coronal—and understand the significance of various imaging sequences like T1, T2, and FLAIR to see the brain in a whole new light.</p>
+                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Medical Imaging Terminology</h2>
+                <p className="font-inter text-sm text-slate-800 my-2">Master the fundamentals of imaging terminology. You'll learn how to define and identify scans and recall definitions with confidence.</p>
               </div>
             </div>
             <div className="grid grid-cols-[auto_1fr] gap-4">
@@ -115,8 +115,8 @@ export default function Games() {
                 <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={28} />
               </div>
               <div>
-                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Identifying Abnormalities</h2>
-                <p className="font-inter text-sm text-slate-800 my-2">Develop a keen eye for detail. Learn to distinguish between healthy tissue and pathological changes, including identifying lesions, tumors, hemorrhages, and structural shifts that indicate underlying neurological conditions.</p>
+                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Personal Identification</h2>
+                <p className="font-inter text-sm text-slate-800 my-2">Understand the functions of your brain. Learn how each region affects daily functions. </p>
               </div>
             </div>
             <div className="grid grid-cols-[auto_1fr] gap-4">
@@ -124,8 +124,8 @@ export default function Games() {
                 <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={28} />
               </div>
               <div>
-                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Clinical Correlation</h2>
-                <p className="font-inter  text-sm text-slate-800 my-2">Bridge the gap between imaging and reality. This module teaches you how to map visual findings on an MRI to a patient's actual physical symptoms, ensuring your diagnostic practice is grounded in real-world clinical context.</p>
+                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Real World Applications</h2>
+                <p className="font-inter  text-sm text-slate-800 my-2">Bridge the gap between imaging and reality. This module teaches you how to understand the parts of your brain and how they can be analyzed with real-world technologies. </p>
               </div>
             </div>
             <div className="grid grid-cols-[auto_1fr] gap-4">
@@ -133,8 +133,8 @@ export default function Games() {
                 <CheckIcon className="text-white bg-blue-800 rounded-full p-1" size={28} />
               </div>
               <div>
-                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Differential Diagnosis</h2>
-                <p className="font-inter  text-sm text-slate-800 my-2">Think like a specialist. Learn to weigh competing possibilities by analyzing specific imaging "signatures." You'll practice narrowing down a list of potential conditions to reach the most accurate and evidence-based diagnosis.</p>
+                <h2 className="text-xl sm:text-xl font-source-serif-4 font-medium text-blue-600">Diseases and Conditions</h2>
+                <p className="font-inter  text-sm text-slate-800 my-2">Understand diagnoses. Learn how cancerous disease develop and progress. You'll learn basic definitions of illnesses as a foundation for future learning.</p>
               </div>
             </div>
           </div>
