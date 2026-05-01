@@ -56,7 +56,7 @@ export default function Explore() {
           id="float-child"
           style={{ flex: "10", minHeight: "460px", overflow: "hidden" }}
         >
-          <div style={{ position: "relative", width: "100%", height: "74%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden" }}>
+          <div style={{ position: "relative", width: "100%", height: "68%", border: "5px solid black", borderRadius: "10px", boxSizing: "border-box", overflow: "hidden" }}>
             <div ref={viewerRef} style={{ position: "absolute", inset: 0 }} />
             <Button
               variant="explore"
@@ -72,17 +72,17 @@ export default function Explore() {
             <img
               src={contourImages.anterior}
               alt="Coronal Anterior Slice"
-              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+              style={{ width: "326px", height: "185px", borderLeft: "73px", borderRight: "73px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
             <img
               src={contourImages.sagittal}
               alt="Left Sagittal Slice"
-              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+              style={{ width: "326px", height: "185px", borderLeft: "73px", borderRight: "73px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
             <img
               src={contourImages.axial}
               alt="Upper Axial Slice"
-              style={{ width: "360px", height: "185px", borderLeft: "90px", borderRight: "90px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
+              style={{ width: "326px", height: "185px", borderLeft: "73px", borderRight: "73px", borderStyle: "solid", borderColor: "#0e0e78", borderRadius: "10px", marginRight: "9px" }}
             />
           </div>
         </div>
